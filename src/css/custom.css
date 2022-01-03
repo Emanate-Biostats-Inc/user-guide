@@ -6,13 +6,20 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #256f8c;
+  --ifm-color-primary-dark: #145b76;
+  --ifm-color-primary-darker: #004860;
+  --ifm-color-primary-darkest: #003348;
+  --ifm-color-primary-light: #347e9e;
+  --ifm-color-primary-lighter: #5391b0;
+  --ifm-color-primary-lightest: #6ea6e2;
+  --ifm-color-secondary: #24965d;
+  --ifm-color-secondary-dark: #1d8451;
+  --ifm-color-secondary-darker: #187346;
+  --ifm-color-secondary-darkest: #115432;
+  --ifm-color-secondary-light: #2ba567;
+  --ifm-color-secondary-lighter: #4fb27d;
+  --ifm-color-secondary-lightest: #6fbf93;
   --ifm-code-font-size: 95%;
 }
 
@@ -23,6 +30,62 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+/* .navbar__item:hover {
+  color: #fff;
+  background-color: rgb(24, 115, 70, 0.5);
+  border-radius: 0.5rem;
+} */
+
+html[data-theme="light"] .footer {
+  color: #fff;
+  background-color: var(--ifm-color-secondary-darker);
+}
+
+.navbar {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.navbar__logo {
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.navbar__title,
+.navbar__item {
+  color: #fff;
+}
+
+.navbar__title:hover,
+.navbar__title--active {
+  color: var(--ifm-color-primary-lighter);
+  text-decoration: none;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--ifm-color-primary-lighter);
+  text-decoration: none;
+}
+
+/* html[data-theme="light"] .navbar__link {
+  color: #fff;
+} */
+
+html[data-theme="light"] .footer a {
+  color: #fff;
+}
+
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.docs-doc-page h1 {
+  color: var(--ifm-color-primary-darker);
+}
+
+html[data-theme="dark"] {
+  --ifm-color-primary: #5391b0;
+  --ifm-color-primary-dark: #004860;
 }
