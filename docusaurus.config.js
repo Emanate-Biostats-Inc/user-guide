@@ -1,31 +1,32 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'User Guide',
-  tagline: 'Biostatistics',
-  url: 'https://emanate-biostats-inc.github.io',
-  baseUrl: '/user-guide/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
-  organizationName: 'emanate-biostats-inc', // Usually your GitHub org/user name.
-  projectName: 'user-guide', // Usually your repo name.
+  title: "User Guide",
+  tagline: "Biostatistics",
+  url: "https://emanate-biostats-inc.github.io",
+  baseUrl: "/user-guide/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "emanate-biostats-inc", // Usually your GitHub org/user name.
+  projectName: "user-guide", // Usually your repo name.
   // trailingSlash: false,
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: 'https://github.com/Emanate-Biostats-Inc/user-guide/',
+          editUrl:
+            "https://github.com/Emanate-Biostats-Inc/user-guide/blob/master/",
         },
         // blog: {
         //   showReadingTime: true,
@@ -34,7 +35,7 @@ const config = {
         //     'https://github.com/Emanate-Biostats-Inc/user-guide/',
         // },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -44,23 +45,23 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Emanate User Guide',
+        title: "Emanate User Guide",
         logo: {
-          alt: 'Emanate Logo',
-          src: 'img/logo.svg',
+          alt: "Emanate Logo",
+          src: "img/logo.svg",
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'right',
-            label: 'Programming',
+            type: "doc",
+            docId: "intro",
+            position: "right",
+            label: "Programming",
           },
           {
-            type: 'doc',
-            docId: 'macros-intro',
-            position: 'right',
-            label: 'Macros',
+            type: "doc",
+            docId: "macros-intro",
+            position: "right",
+            label: "Macros",
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           // {
@@ -71,18 +72,18 @@ const config = {
         ],
       },
       footer: {
-        style: 'light',
+        style: "light",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Programming',
-                to: '/docs/intro',
+                label: "Programming",
+                to: "/docs/intro",
               },
               {
-                label: 'Macros',
-                to: '/docs/macros-intro',
+                label: "Macros",
+                to: "/docs/macros-intro",
               },
             ],
           },
