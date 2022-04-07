@@ -1,5 +1,3 @@
-Working public version - repo and site are public
-
 ## Setup
 
 1. Create GitHub account https://github.com/
