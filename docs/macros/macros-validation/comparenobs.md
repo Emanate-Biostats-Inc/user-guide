@@ -67,3 +67,5 @@ TODO
 ### cnobs datasets
 
 TODO 1, 2, 3 "comparenobs_datasets"
+
+![](/img/macros/test.png)

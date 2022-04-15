@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "User Guide",
-  tagline: "Biostatistics",
+  title: "Emanate Biostats User Guide",
+  tagline: "Everything you need to know about our SAS processes",
   url: "https://emanate-biostats-inc.github.io",
   baseUrl: "/user-guide/",
   onBrokenLinks: "throw",
@@ -45,7 +45,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Emanate User Guide",
+        title: "Emanate Biostats User Guide",
         logo: {
           alt: "Emanate Logo",
           src: "img/logo.svg",
@@ -53,15 +53,21 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "programming/programming-intro",
             position: "right",
             label: "Programming",
           },
           {
             type: "doc",
-            docId: "macros-intro",
+            docId: "macros/macros-intro",
             position: "right",
             label: "Macros",
+          },
+          {
+            type: "doc",
+            docId: "settings/settings-intro",
+            position: "right",
+            label: "Settings",
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           // {
@@ -79,11 +85,15 @@ const config = {
             items: [
               {
                 label: "Programming",
-                to: "/docs/intro",
+                to: "/docs/programming/programming-intro",
               },
               {
                 label: "Macros",
-                to: "/docs/macros-intro",
+                to: "/docs/macros/macros-intro",
+              },
+              {
+                label: "Settings",
+                to: "/docs/settings/settings-intro",
               },
             ],
           },

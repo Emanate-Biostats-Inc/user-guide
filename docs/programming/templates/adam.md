@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: SDTM
+sidebar_position: 2
+title: ADaM
 ---
 
 ## Primary
@@ -25,7 +25,10 @@ Modifications   :
 
 %let userdrv = C:\Users\&sysuserid\Emanate Biostats, Inc\EB - Projects - Documents;
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
-%presdtm(<domain>);
+%preadam(<domain>);
+
+%getADSLcore;
+%mergeSupp(<domain>);
 
 /*
 
@@ -33,25 +36,17 @@ Modifications   :
 
 */
 
-%sdtm_(<final_dataset>);
-
-data sdtm;
-   set sdtm_;
-   %transfer;
-   %fixed;
-   %auto;
-run;
-%postsdtm;
-
+%postadam;
 
 %progcheck;
 ```
 
 ### Documentation Links
 
-<!-- - [init](init.md)
-- [%sdtm\_](sdtm_.md)
-- [%progCheck](progcheck.md) -->
+<!--
+- [init](init.md)
+- [%progCheck](progcheck.md)
+-->
 
 ## Validator
 
@@ -76,8 +71,10 @@ Modifications   :
 %let userdrv = C:\Users\&sysuserid\Emanate Biostats, Inc\EB - Projects - Documents;
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
 %setup(progname=<domain>);
-%batch(&projdrv\programs\SDTM, inc="<domain>", QC=Y);
+%batch(&projdrv\programs\ADAM, inc="<domain>", QC=Y);
 
+%qc_getADSLcore;
+%qc_mergeSupp(<domain>);
 
 /*
 
@@ -85,18 +82,18 @@ Modifications   :
 
 */
 
-%datafinal_qc(<final_dataset>, <domain>);
+%qc_datafinal(<final_dataset>, <domain>);
 
-%nobs(sdtm.<domain>);
+%nobs(adam.<domain>);
 %nobs(qc_final);
 
 ** if unequal nobs call this **;
 /*
-%compareNobs(sdtm.<domain>, qc_final, usubjid);
+%compareNobs(adam.<domain>, qc_final, usubjid);
 */
 
-%qc_compare(
-	base=sdtm.<domain>,
+%proc_compare(
+	base=adam.<domain>,
 	compare=qc_<domain>
 );
 
@@ -105,10 +102,16 @@ Modifications   :
 
 ### Documentation Links
 
-- [%compareNobs](..\macros-validation\comparenobs.md)
+<!-- prettier-ignore -->
+- [%compareNobs](..\..\macros\macros-validation\comparenobs.md)
 
-<!-- - [init](init.md)
-- [%batch](batch.md)
+<!--
+- [init](init.md)
 - [%setup](setup.md)
+- [%batch](batch.md)
+- [%qc_datafinal](qc_datafinal.md)
 - [%nobs](nobs.md)
-- [%checkProg](checkprog.md) -->
+
+- [%proc_compare](proc_compare.md)
+- [%progcheck](progcheck.md)
+-->

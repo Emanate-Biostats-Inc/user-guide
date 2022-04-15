@@ -22,29 +22,92 @@ const sidebars = {
     {
       type: "category",
       label: "Programming",
-      items: ["intro"],
+      items: ["programming/programming-intro", "programming/style-guide"],
     },
+
     {
       type: "category",
       label: "Templates",
-      items: ["templates/sdtm"],
+      collapsed: false,
+      items: [
+        "programming/templates/sdtm",
+        "programming/templates/adam",
+        "programming/templates/table",
+      ],
+    },
+    {
+      type: "category",
+      label: "Set Up",
+      collapsed: false,
+      items: ["programming/set-up/init"],
+    },
+    {
+      type: "category",
+      label: "Listings",
+      collapsed: false,
+      items: ["programming/listings/cell-width"],
     },
   ],
   macrosSidebar: [
     {
       type: "category",
       label: "Macros",
-      items: ["macros-intro"],
+      collapsed: false,
+      items: [
+        "macros/macros-intro",
+        "macros/using-this-guide",
+        "macros/macros-template",
+      ],
     },
     {
       type: "category",
       label: "Validation",
-      items: ["macros-validation/comparenobs"],
+      collapsed: false,
+      items: [
+        "macros/macros-validation/comparenobs",
+        {
+          type: "category",
+          label: "Listings",
+          collapsed: false,
+          items: ["macros/macros-validation/listings/primarydata"],
+        },
+      ],
     },
     {
       type: "category",
       label: "SDTM",
-      items: ["macros-sdtm/sdtm-pre", "macros-sdtm/sdtm-post"],
+      collapsed: false,
+      items: ["macros/macros-sdtm/sdtm-pre", "macros/macros-sdtm/sdtm-post"],
+    },
+  ],
+  settingsSidebar: [
+    {
+      type: "category",
+      label: "Settings",
+      collapsed: false,
+      items: ["settings/settings-intro"],
+    },
+    {
+      type: "category",
+      label: "Shortcuts",
+      collapsed: false,
+      items: ["settings/shortcuts/keys", "settings/shortcuts/abbreviations"],
+    },
+    {
+      type: "category",
+      label: "Environment",
+      collapsed: false,
+      items: [
+        "settings/environment/saving-settings",
+        "settings/environment/layout",
+        "settings/environment/appearance",
+      ],
+    },
+    {
+      type: "category",
+      label: "Preferences",
+      collapsed: false,
+      items: ["settings/preferences/results"],
     },
   ],
 };

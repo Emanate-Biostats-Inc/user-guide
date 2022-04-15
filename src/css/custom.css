@@ -36,11 +36,7 @@
   border-radius: 0.5rem;
 } */
 
-html[data-theme="light"] .footer {
-  color: #fff;
-  background-color: var(--ifm-color-secondary-darker);
-}
-
+/* Navbar */
 .navbar {
   background-color: var(--ifm-color-primary-darker);
 }
@@ -73,19 +69,52 @@ html[data-theme="light"] .footer {
   color: #fff;
 } */
 
+/* Footer */
+.footer {
+  color: #fff;
+  background-color: var(--ifm-color-primary-darker);
+}
+
 html[data-theme="light"] .footer a {
   color: #fff;
 }
 
-html[data-theme="dark"] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.docs-doc-page h1 {
+/* DOCS */
+/* H1 */
+html[data-theme="light"] .docs-doc-page h1 {
   color: var(--ifm-color-primary-darker);
+  /* color: var(--ifm-color-secondary-darker); */
 }
 
+html[data-theme="dark"] .docs-doc-page h1 {
+  color: #fff;
+}
+
+/* img */
+.docs-doc-page img {
+  border: 2px solid var(--ifm-color-primary-dark);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* h4 */
+.docs-doc-page [id^="good"] {
+  color: var(--ifm-color-secondary);
+}
+
+.docs-doc-page [id^="bad"] {
+  color: red;
+}
+
+/* other */
 html[data-theme="dark"] {
   --ifm-color-primary: #5391b0;
   --ifm-color-primary-dark: #004860;
+}
+
+/* html[data-theme="dark"] {
+  background-color: #121212;
+} */
+
+html[data-theme="dark"] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
 }
