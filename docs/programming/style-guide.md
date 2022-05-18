@@ -17,7 +17,7 @@ Identical program types involve repeated code. Therefore, it frequently makes se
 
 - Always indent nested code such as data steps, proc statements, do blocks, and macro definitions. Use tab or two spaces.
 
-There are differing opinions regarding [tabs vs. spaces.](https://softwareengineering.stackexchange.com/questions/57/tabs-versus-spaces-what-is-the-proper-indentation-character-for-everything-in-e) Both sides have many valid points. However, the most important thing is to **keep your code consistent** (i.e., avoid switching between tabs or spaces for regular indentations).
+Whether you use tabs or spaces, the most important thing is to **keep your code consistent** (i.e., avoid switching between tabs or spaces for regular indentations).
 
 #### Good
 
