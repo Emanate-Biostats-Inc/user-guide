@@ -70,7 +70,6 @@ Modifications   :
 
 %let userdrv = C:\Users\&sysuserid\Emanate Biostats, Inc\EB - Projects - Documents;
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
-%setup(progname=<domain>);
 %batch(&projdrv\programs\ADAM, inc="<domain>", QC=Y);
 
 %qc_getADSLcore;
@@ -107,7 +106,6 @@ Modifications   :
 
 <!--
 - [init](init.md)
-- [%setup](setup.md)
 - [%batch](batch.md)
 - [%qc_datafinal](qc_datafinal.md)
 - [%nobs](nobs.md)
