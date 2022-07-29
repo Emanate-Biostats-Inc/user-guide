@@ -62,7 +62,7 @@ This is the same value you would use in a normal proc compare.
 
 This is the same value you would use in a normal proc compare.
 
-### _part_
+### _part_ (only needed if there are multiple parts)
 
 Set to 1 for the first call/part, 2 for the next, etc. See Example 3 below.
 
