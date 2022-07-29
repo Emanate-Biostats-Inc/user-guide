@@ -24,7 +24,13 @@ This command resets your SAS session. It is highly recommended when running diff
 <!-- [More detail on resetting your SAS session here.](reset-key.md) -->
 
 ```
-wpgm;submit "%include 'O:\Biometrics\General\SAS\Set-up\reset.sas';"
+wpgm;submit "%include '<path>\reset.sas';"
+```
+
+This command opens the most resent dataset that was created.
+
+```
+vt &syslast
 ```
 
 This command clears your log and returns to your active enhanced editor window.

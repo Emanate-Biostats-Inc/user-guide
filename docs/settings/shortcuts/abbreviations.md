@@ -76,17 +76,10 @@ proc import
 run;
 ```
 
-_mod_
-
-```
-  Date:      Programmer; Validator QC: Date (or N/A); - Modification
-  DDMMMYYYY  FLast;      N/A                          - note
-```
-
 _put_
 
 ```
-put "WARN" "ING: (AC)
+put "WARN" "ING: (EB)
 ```
 
 _functions_
@@ -114,5 +107,5 @@ _%compareNobs_
 Another useful application is abbreviating the syntax for a macro if you forget the parameters.
 
 ```
-%compareNobs(data1, var1, data2, var2);
+%compareNobs(data1, data2, vars);
 ```
