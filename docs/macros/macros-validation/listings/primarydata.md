@@ -10,6 +10,10 @@ _Created by _
 
 primaryData creates comparison datasets and variables to be used in `proc compare`. These dynamically update if the primary programmer changes their datasets or variables.
 
+#### QC Version Available?
+
+N/A
+
 ## Syntax
 
 ```sas
@@ -35,15 +39,23 @@ None
 ```
 
 ```sas
-proc compare base = primary1 compare = qc_part1 listobs;
-    var &compareVars1;
-    with /* my vars */;
-run;
+%proc_compare(
+  base = primary1,
+  compare = qc_part1,
+  program = l-program,
+  part = 1,
+  vars = &comparevars1,
+  with = /* my vars */;
+);
 
-proc compare base = primary2 compare = qc_part2 listobs;
-    var &compareVars2;
-    with /* my vars */;
-run;
+%proc_compare(
+  base = primary2,
+  compare = qc_part2,
+  program = l-program,
+  part = 2,
+  vars = &comparevars2,
+  with = /* my vars */;
+);
 ```
 
 ## Outcome

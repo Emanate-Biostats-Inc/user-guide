@@ -53,11 +53,7 @@ const sidebars = {
       type: "category",
       label: "Macros",
       collapsed: false,
-      items: [
-        "macros/macros-intro",
-        "macros/using-this-guide",
-        "macros/macros-template",
-      ],
+      items: ["macros/macros-intro", "macros/using-this-guide"],
     },
     {
       type: "category",
@@ -65,6 +61,7 @@ const sidebars = {
       collapsed: false,
       items: [
         "macros/macros-validation/comparenobs",
+        "macros/macros-validation/proc-compare",
         {
           type: "category",
           label: "Listings",
@@ -78,6 +75,12 @@ const sidebars = {
       label: "SDTM",
       collapsed: false,
       items: ["macros/macros-sdtm/sdtm-pre", "macros/macros-sdtm/sdtm-post"],
+    },
+    {
+      type: "category",
+      label: "ADaM",
+      collapsed: false,
+      items: ["macros/macros-adam/mergesupp"],
     },
   ],
   settingsSidebar: [
