@@ -18,6 +18,10 @@ cd user-guide
 git init .
 ```
 
+## Screenshots
+
+Use 1080p monitor for consistent resolution and sizing.
+
 ## Test Changes
 
 ```powershell
