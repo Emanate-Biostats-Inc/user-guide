@@ -10,32 +10,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
-    image: "img/undraw_docusaurus_mountain.svg",
+    title: "Program Templates",
+    image: "img/templates.png",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Program templates using our standard processes and newest department
+        macros.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
-    image: "img/undraw_docusaurus_tree.svg",
+    title: "Macro Documentation",
+    image: "img/macros.png",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Macro documenation aimed to provide clear and succinct information such
+        as syntax, examples, and expected outcomes.
       </>
     ),
   },
   {
-    title: "Powered by React",
-    image: "img/undraw_docusaurus_react.svg",
+    title: "Customize your SAS Environment",
+    image: "img/custom.png",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Documentation on how to change any type of setting in SAS, from
+        appearance, colors, to shortcuts.
       </>
     ),
   },

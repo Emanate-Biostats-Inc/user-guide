@@ -29,7 +29,7 @@ Feel free to try the other few options, but the default _Large Icons_ can get fa
 
 Preserve these changes across sessions by [saving settings.](saving-settings.md) Now you'll be able to easily navigate between project libraries, work datasets, and other projects.
 
-<!-- ![](/img/settings/layout2.png) -->
+![](/img/settings/layout2.png)
 
 ## Window Layout
 
