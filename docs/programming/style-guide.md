@@ -212,17 +212,9 @@ xpeperf, var4, \_peorres, or aaa
 
 ## Casing
 
-Certain casing makes sense for different code elements. Examples include lowercase, UPPERCASE, camelCase, PascalCase, snake_case, and so on.
-
-### Variables and Datasets
-
-- Use lowercase, UPPERCASE, or camelCase.
+Certain casing makes sense for different code elements. Examples include lowercase, UPPERCASE, camelCase, PascalCase, and snake_case.
 
 The most important thing is to **keep your code consistent.** If you decide to use uppercase for your variables, avoid having any lowercase variables and vice versa. Ctrl + Shift + L transforms your selection to lowercase. Ctrl + Shift + U transforms your selection to uppercase.
-
-### Macros
-
-- Our macro program names are a mix of camelCase, snake_case, and lowercase, so avoid using PascalCase or UPPERCASE.
 
 ## Operators
 

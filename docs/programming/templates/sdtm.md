@@ -3,6 +3,8 @@ sidebar_position: 1
 title: SDTM
 ---
 
+_This page is not final so some of the macros and processes are still being tested_
+
 ## Primary
 
 ### Template
@@ -86,11 +88,9 @@ Modifications   :
 
 %qc_datafinal(<final_dataset>, <domain>);
 
+/*
 %nobs(sdtm.<domain>);
 %nobs(qc_final);
-
-** if unequal nobs call this **;
-/*
 %compareNobs(sdtm.<domain>, qc_final, usubjid);
 */
 

@@ -3,6 +3,8 @@ sidebar_position: 3
 title: Table
 ---
 
+_This page is not final so some of the macros and processes are still being tested_
+
 ## Primary
 
 ### Template
@@ -10,7 +12,7 @@ title: Table
 ```sas
 /****************************************************************************************
 Program Name    : <table>.sas
-Purpose         : Create <table> dataset
+Purpose         : Create <table>
 Client          : <Client>
 Project         : <Project>
 Programmer      : <Programmer>
@@ -25,7 +27,7 @@ Modifications   :
 
 %let userdrv = C:\Users\&sysuserid\Emanate Biostats, Inc\EB - Projects - Documents;
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
-%presdtm(<table>);
+%setup(<table>);
 
 /*
 
@@ -33,18 +35,7 @@ Modifications   :
 
 */
 
-%sdtm_(<final_dataset>);
-
-data sdtm;
-   set sdtm_;
-   %transfer;
-   %fixed;
-   %auto;
-run;
-
-%postsdtm;
-
-%progcheck;
+** to do **;
 ```
 
 ### Documentation Links
@@ -76,7 +67,7 @@ Modifications   :
 
 %let userdrv = C:\Users\&sysuserid\Emanate Biostats, Inc\EB - Projects - Documents;
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
-%batch(&projdrv\programs\SDTM, inc="<table>", QC=Y);
+%batch(&projdrv\programs\TFLs, inc="<table>", QC=Y);
 
 /*
 
@@ -84,19 +75,11 @@ Modifications   :
 
 */
 
-%qc_datafinal(<final_dataset>, <table>);
-
-%nobs(sdtm.<table>);
-%nobs(qc_final);
-
-** if unequal nobs call this **;
-/*
-%compareNobs(sdtm.<table>, qc_final, usubjid);
-*/
-
 %proc_compare(
-	base=sdtm.<table>,
-	compare=qc_<table>
+	base    = final,
+	compare = qc_final,
+	var     = avisit text col1 col2 col3,
+	with    = text1 text2 _1 _2 _3
 );
 
 %progcheck;

@@ -33,6 +33,7 @@ const sidebars = {
         "programming/templates/sdtm",
         "programming/templates/adam",
         "programming/templates/table",
+        "programming/templates/listing",
       ],
     },
     {

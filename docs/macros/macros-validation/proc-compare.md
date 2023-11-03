@@ -24,12 +24,12 @@ N/A
 
 ```sas
 %macro proc_compare(
-  base = null,
-  compare = null,
-  program = null,
-  vars = null,
-  with = null,
   part = null,
+  base = null,
+  base_overwrite = null,
+  compare = null,
+  var = null,
+  with = null,
   criterion = null,
   options = listall,
   id = null,
@@ -50,11 +50,11 @@ This is the same value you would use in a normal proc compare.
 
 ## Additional Required Parameters for TFLs
 
-### _program_
+### _part_ (only needed if there are multiple parts)
 
-This is the value of the **Program** column in the programming log.
+Set to 1 for the first call/part, 2 for the next, etc. See Example 3 below.
 
-### _vars_
+### _var_
 
 This is the same value you would use in a normal proc compare.
 
@@ -62,11 +62,11 @@ This is the same value you would use in a normal proc compare.
 
 This is the same value you would use in a normal proc compare.
 
-### _part_ (only needed if there are multiple parts)
-
-Set to 1 for the first call/part, 2 for the next, etc. See Example 3 below.
-
 ## Optional Parameters
+
+### _base_overwrite_
+
+This allows you to compare with a custom dataset for SDTM and ADaM if applicable.
 
 ### _criterion_
 
@@ -94,58 +94,77 @@ Set to 1 if you want **proc_compare** to preserve all datasets used in the macro
 
 ```sas
 %proc_compare(
-  base = adam.adae,
-  compare = qc_final
+  base    = sdtm.dm,
+  compare = qc_dm
+);
+
+** if supp **;
+%proc_compare(
+  base    = sdtm.suppdm,
+  compare = qc_suppdm
 );
 ```
 
-2. Single part Table/Listing
+2. Table/Figure/Listing
 
 ```sas
 %proc_compare(
-  base = final,
+  base    = final,
   compare = qc_final,
-  program = t-lb,
-  vars = paramn ord text col1 col2 col3,
-  with = paramn ord stat trt1 trt2 trt3
+  var     = paramn ord text col1 col2 col3,
+  with    = paramn ord stat trt1 trt2 trt3
 );
 ```
 
-3. Multiple part Listing
+3. Listing with multiple parts
 
 ```sas
-%primaryData; /* this macro is if you want to get the dataset and variables from production */
+%primaryData;
 
 %proc_compare(
-  base = primary1,
+  part    = 1,
+  base    = primary1,
   compare = qc_final,
-  program = l-substance,
-  part = 1,
-  vars = &comparevars1,
-  with = subjid trt01a sudstxt suendat years cigarettes cigars pipes ecigs
+  var     = &comparevars1,
+  with    = subjid trt01a sudstxt suendat years cigarettes cigars
 );
 
 %proc_compare(
-  base = primary2,
+  part    = 2,
+  base    = primary2,
   compare = qc_final,
-  program = l-substance,
-  part = 2,
-  vars = &comparevars2,
-  with = subjid trt01a day six prob1 prob2 sub
+  var     = &comparevars2,
+  with    = subjid trt01a day six prob1 prob2 sub
+);
+```
+
+4. Dataset with temporary subset comparison
+
+```sas
+data lb_subset;
+  set sdtm.lb;
+  where lbtestcd = "URATE";
+run;
+
+%proc_compare(
+  base           = sdtm.lb,
+  base_overwrite = lb_subset,
+  compare        = qc_lb,
+  explanation    = "Only comparing with LBTESTCD 'URATE' for Topline delivery 9/1"
 );
 ```
 
 ## Outcome
 
-### ProjectFolder/Output/QC/qc_report
+### ProjectFolder/Output/QC/Tracker/qc_tacker
 
 SAS dataset that keeps track of all the relevant QC information across all programs
 
 ![](/img/macros/qc_report.png)
 
-### ProjectFolder/Output/QC/Reports
+### ProjectFolder/Output/QC/Archive
 
-Directory containing excel backups of qc_report each new date a QC program is run
+Directory containing excel backups of qc_tracker each new date a QC program is run
 
 ### ProjectFolder/Output/QC/Comparisons
 
@@ -153,8 +172,9 @@ Directory containing all QC docs in RTF format
 
 ## Notes
 
-- The macro has 80 lines of checks so it should always provide helpful information in your SAS log if you happen to use it incorrectly. It won't run unless everything is in order.
 - This macro currently ignores the following and treats them as a clean compare
   - Dataset labels differ
   - Variable has different length
   - Variable has different label
+  - Variable has different informat (TFL only)
+  - Variable has different format (TFL only)

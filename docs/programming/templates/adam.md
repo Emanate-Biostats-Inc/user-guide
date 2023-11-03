@@ -3,6 +3,8 @@ sidebar_position: 2
 title: ADaM
 ---
 
+_This page is not final so some of the macros and processes are still being tested_
+
 ## Primary
 
 ### Template
@@ -27,7 +29,6 @@ Modifications   :
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
 %preadam(<domain>);
 
-%getADSLcore;
 %mergeSupp(<domain>);
 
 /*
@@ -72,7 +73,6 @@ Modifications   :
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
 %batch(&projdrv\programs\ADAM, inc="<domain>", QC=Y);
 
-%qc_getADSLcore;
 %qc_mergeSupp(<domain>);
 
 /*
@@ -83,11 +83,9 @@ Modifications   :
 
 %qc_datafinal(<final_dataset>, <domain>);
 
+/*
 %nobs(adam.<domain>);
 %nobs(qc_final);
-
-** if unequal nobs call this **;
-/*
 %compareNobs(adam.<domain>, qc_final, usubjid);
 */
 

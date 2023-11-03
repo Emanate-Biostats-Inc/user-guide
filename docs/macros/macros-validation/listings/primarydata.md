@@ -40,20 +40,18 @@ None
 
 ```sas
 %proc_compare(
+  part = 1,
   base = primary1,
   compare = qc_part1,
-  program = l-program,
-  part = 1,
-  vars = &comparevars1,
+  var = &comparevars1,
   with = /* my vars */;
 );
 
 %proc_compare(
+  part = 2,
   base = primary2,
   compare = qc_part2,
-  program = l-program,
-  part = 2,
-  vars = &comparevars2,
+  var = &comparevars2,
   with = /* my vars */;
 );
 ```
