@@ -21,8 +21,6 @@ Unfortunately, SAS doesn't allow copy paste in this window. You have to type out
 
 This command resets your SAS session. It is highly recommended when running different programs (especially from different studies) or to solve session errors.
 
-<!-- [More detail on resetting your SAS session here.](reset-key.md) -->
-
 ```
 wpgm;submit "%include '<path>\reset.sas';"
 ```

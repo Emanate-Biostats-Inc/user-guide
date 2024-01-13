@@ -3,8 +3,6 @@ sidebar_position: 1
 title: SDTM
 ---
 
-_This page is not final so some of the macros and processes are still being tested_
-
 ## Primary
 
 ### Template
@@ -51,10 +49,11 @@ run;
 
 ### Documentation Links
 
-<!--
-- [init](init.md)
-- [%progCheck](progcheck.md)
--->
+<!-- prettier-ignore -->
+- [**%init**](..\set-up\init.md)
+- [**%presdtm**](..\..\macros\macros-sdtm\presdtm.md)
+- [**%postsdtm**](..\..\macros\macros-sdtm\postsdtm.md)
+- [**%progcheck**](..\..\macros\macros-general\progcheck.md)
 
 ## Validator
 
@@ -86,14 +85,6 @@ Modifications   :
 
 */
 
-%qc_datafinal(<final_dataset>, <domain>);
-
-/*
-%nobs(sdtm.<domain>);
-%nobs(qc_final);
-%compareNobs(sdtm.<domain>, qc_final, usubjid);
-*/
-
 %proc_compare(
 	base=sdtm.<domain>,
 	compare=qc_<domain>
@@ -105,14 +96,7 @@ Modifications   :
 ### Documentation Links
 
 <!-- prettier-ignore -->
-- [%compareNobs](..\..\macros\macros-validation\comparenobs.md)
-
-<!--
-- [init](init.md)
-- [%batch](batch.md)
-- [%qc_datafinal](qc_datafinal.md)
-- [%nobs](nobs.md)
-
-- [%proc_compare](proc_compare.md)
-- [%progcheck](progcheck.md)
--->
+- [**%init**](..\set-up\init.md)
+- [**%batch**](..\..\macros\macros-general\batch.md)
+- [**%proc_compare**](..\..\macros\macros-validation\proc-compare.md)
+- [**%progcheck**](..\..\macros\macros-general\progcheck.md)

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Style Guide
 ---
 
@@ -9,7 +9,7 @@ These conventions are to improve the maintenance, readability, and efficiency of
 
 - Always use a template to start your first program type for a new study.
 
-Our SAS processes are dynamic, and [our program templates](./templates/sdtm.md) will always have the most current implementation. These templates also follow every rule in this style guide.
+Our SAS processes are dynamic, and our [**program templates**](./templates/sdtm.md) will always have the most current implementation. These templates also follow every rule in this style guide.
 
 Identical program types involve repeated code. Therefore, it frequently makes sense to copy previous programs to create new ones. Feel free to do this only after you have copied over the template for your first program type.
 
@@ -230,8 +230,6 @@ The most important thing is to **keep your code consistent.** If you decide to u
 
 ### Comparison Operators
 
-There are differing opinions on whether to use symbols or mnemonics. The most important thing is to **keep your code consistent.**
-
 | Symbol | Mnemonic | Definition               |
 | ------ | -------- | ------------------------ |
 | =      | eq       | equal to                 |
@@ -320,9 +318,6 @@ The order of program elements is usually crucial. In other cases, it's still ide
 ## Efficiency
 
 If you need to do the same process more than 1-2 times, **you should probably use an array or macro.** Duplicated code is a [common code smell](https://en.wikipedia.org/wiki/Code_smell) that should be avoided.
-
-<!-- - [Arrays](arrays.md)
-- [Macro Basics](macro-basic.md) -->
 
 ### Keep
 

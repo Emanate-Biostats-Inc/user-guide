@@ -4,8 +4,6 @@ sidebar_position: 2
 
 # %proc_compare
 
-<!-- This document is used as the live template for other macro documentation -->
-
 _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20proc_compare)_
 
 ## Description
@@ -15,10 +13,6 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 - manages the handling of all program QC documentation
 - automatically updates a SAS dataset and excel file that provides all current information about program QC status
 - automatic snapshots of QC documentation and overall QC file for each program and day
-
-#### QC Version Available?
-
-N/A
 
 ## Syntax
 
@@ -86,7 +80,7 @@ If applicable, set to "here is my explanation describing why there is a mismatch
 
 ### _debug_
 
-Set to 1 if you want **proc_compare** to preserve all datasets used in the macro for debugging purposes.
+Set to 1 if you want **proc_compare** to preserve all datasets created in the macro for debugging purposes.
 
 ## Examples
 

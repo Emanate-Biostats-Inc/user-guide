@@ -53,7 +53,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "programming/programming-intro",
+            docId: "programming/style-guide",
             position: "right",
             label: "Programming",
           },
@@ -65,7 +65,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "settings/settings-intro",
+            docId: "settings/saving-settings",
             position: "right",
             label: "Settings",
           },
@@ -85,7 +85,7 @@ const config = {
             items: [
               {
                 label: "Programming",
-                to: "/docs/programming/programming-intro",
+                to: "/docs/programming/style-guide",
               },
               {
                 label: "Macros",
@@ -93,7 +93,7 @@ const config = {
               },
               {
                 label: "Settings",
-                to: "/docs/settings/settings-intro",
+                to: "/docs/settings/saving-settings",
               },
             ],
           },

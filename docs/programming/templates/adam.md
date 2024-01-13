@@ -3,8 +3,6 @@ sidebar_position: 2
 title: ADaM
 ---
 
-_This page is not final so some of the macros and processes are still being tested_
-
 ## Primary
 
 ### Template
@@ -29,7 +27,7 @@ Modifications   :
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
 %preadam(<domain>);
 
-%mergeSupp(<domain>);
+%suppAdd(<domain>);
 
 /*
 
@@ -44,10 +42,12 @@ Modifications   :
 
 ### Documentation Links
 
-<!--
-- [init](init.md)
-- [%progCheck](progcheck.md)
--->
+<!-- prettier-ignore -->
+- [**%init**](..\set-up\init.md)
+- [**%preadam**](..\..\macros\macros-adam\preadam.md)
+- [**%suppAdd**](..\..\macros\macros-adam\suppadd.md)
+- [**%postadam**](..\..\macros\macros-adam\postadam.md)
+- [**%progcheck**](..\..\macros\macros-general\progcheck.md)
 
 ## Validator
 
@@ -73,20 +73,12 @@ Modifications   :
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
 %batch(&projdrv\programs\ADAM, inc="<domain>", QC=Y);
 
-%qc_mergeSupp(<domain>);
+%qc_suppAdd(<domain>);
 
 /*
 
     program code
 
-*/
-
-%qc_datafinal(<final_dataset>, <domain>);
-
-/*
-%nobs(adam.<domain>);
-%nobs(qc_final);
-%compareNobs(adam.<domain>, qc_final, usubjid);
 */
 
 %proc_compare(
@@ -100,14 +92,8 @@ Modifications   :
 ### Documentation Links
 
 <!-- prettier-ignore -->
-- [%compareNobs](..\..\macros\macros-validation\comparenobs.md)
-
-<!--
-- [init](init.md)
-- [%batch](batch.md)
-- [%qc_datafinal](qc_datafinal.md)
-- [%nobs](nobs.md)
-
-- [%proc_compare](proc_compare.md)
-- [%progcheck](progcheck.md)
--->
+- [**%init**](..\set-up\init.md)
+- [**%batch**](..\..\macros\macros-general\batch.md)
+- [**%qc_suppAdd**](..\..\macros\macros-adam\suppadd.md)
+- [**%proc_compare**](..\..\macros\macros-validation\proc-compare.md)
+- [**%progcheck**](..\..\macros\macros-general\progcheck.md)

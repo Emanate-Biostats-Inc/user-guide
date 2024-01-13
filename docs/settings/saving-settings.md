@@ -7,7 +7,7 @@ title: Saving Settings
 
 SAS has a counterintuitive way of saving some of your session settings. Instead of the more common _Apply_ or _Save_, you have to follow these steps.
 
-1. [Customize your window states](layout.md) to how you want them
+1. [**Customize your window states**](.\environment\layout.md) to how you want them
 
 2. **Tools** > **Options** > **Preferences...**
 

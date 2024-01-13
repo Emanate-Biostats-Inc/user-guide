@@ -83,17 +83,19 @@ ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
 ods tagsets.rtf close;
 ods listing;
 
-%pagebrkchk
+%pagebrkchk;
 
 %progcheck;
 ```
 
-<!-- ### Documentation Links -->
+### Documentation Links
 
-<!--
-- [init](init.md)
-- [%progCheck](progcheck.md)
--->
+<!-- prettier-ignore -->
+- [**%init**](..\set-up\init.md)
+- [**%setup**](..\..\macros\macros-general\setup.md)
+- [**%rtfbreak**](..\..\macros\macros-tfl\rtfbreak.md)
+- [**%pagebrkchk**](..\..\macros\macros-tfl\pagebrkchk.md)
+- [**%progcheck**](..\..\macros\macros-general\progcheck.md)
 
 ## Validator
 
@@ -137,17 +139,11 @@ Modifications   :
 %progcheck;
 ```
 
-<!-- ### Documentation Links -->
+### Documentation Links
 
 <!-- prettier-ignore -->
-<!-- - [%compareNobs](..\..\macros\macros-validation\comparenobs.md) -->
-
-<!--
-- [init](init.md)
-- [%batch](batch.md)
-- [%qc_datafinal](qc_datafinal.md)
-- [%nobs](nobs.md)
-
-- [%proc_compare](proc_compare.md)
-- [%progcheck](progcheck.md)
--->
+- [**%init**](..\set-up\init.md)
+- [**%batch**](..\..\macros\macros-general\batch.md)
+- [**%primaryData**](..\..\macros\macros-tfl\primarydata.md)
+- [**%proc_compare**](..\..\macros\macros-validation\proc-compare.md)
+- [**%progcheck**](..\..\macros\macros-general\progcheck.md)

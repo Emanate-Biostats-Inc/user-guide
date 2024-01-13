@@ -5,8 +5,6 @@ title: Using this Guide
 
 Macros are divided into the different categories in the sidebar. The documentation pages use this general template. However, there may be some unique topics that deviate from this layout.
 
-Some sort of (Usage: Required/suggested) colored note at the top? Or, anything listed in this guide should be used in the respective programs.
-
 ## Macro Name
 
 Subheader shows compatible studies and the creator (with mail link).

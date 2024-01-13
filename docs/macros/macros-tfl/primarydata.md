@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # %primaryData
@@ -10,14 +10,10 @@ _Created by _
 
 primaryData creates comparison datasets and variables to be used in `proc compare`. These dynamically update if the primary programmer changes their datasets or variables.
 
-#### QC Version Available?
-
-N/A
-
 ## Syntax
 
 ```sas
-%primaryData;
+%macro primaryData;
 ```
 
 ## Parameters

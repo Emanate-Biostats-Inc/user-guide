@@ -22,7 +22,7 @@ const sidebars = {
     {
       type: "category",
       label: "Programming",
-      items: ["programming/programming-intro", "programming/style-guide"],
+      items: ["programming/style-guide"],
     },
 
     {
@@ -58,30 +58,56 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Validation",
+      label: "General",
       collapsed: false,
       items: [
-        "macros/macros-validation/comparenobs",
-        "macros/macros-validation/proc-compare",
-        {
-          type: "category",
-          label: "Listings",
-          collapsed: false,
-          items: ["macros/macros-validation/listings/primarydata"],
-        },
+        "macros/macros-general/setup",
+        "macros/macros-general/batch",
+        "macros/macros-general/checktfl",
+        "macros/macros-general/nobs",
+        "macros/macros-general/progcheck",
       ],
     },
     {
       type: "category",
       label: "SDTM",
       collapsed: false,
-      items: ["macros/macros-sdtm/sdtm-pre", "macros/macros-sdtm/sdtm-post"],
+      items: ["macros/macros-sdtm/presdtm", "macros/macros-sdtm/postsdtm"],
     },
     {
       type: "category",
       label: "ADaM",
       collapsed: false,
-      items: ["macros/macros-adam/mergesupp"],
+      items: [
+        "macros/macros-adam/preadam",
+        "macros/macros-adam/postadam",
+        "macros/macros-adam/suppadd",
+      ],
+    },
+    {
+      type: "category",
+      label: "TFL",
+      collapsed: false,
+      items: [
+        "macros/macros-tfl/pagebrkchk",
+        "macros/macros-tfl/rtfbreak",
+        "macros/macros-tfl/primarydata",
+      ],
+    },
+    {
+      type: "category",
+      label: "Validation",
+      collapsed: false,
+      items: [
+        "macros/macros-validation/comparenobs",
+        "macros/macros-validation/proc-compare",
+      ],
+    },
+    {
+      type: "category",
+      label: "Lead",
+      collapsed: false,
+      items: ["macros/macros-lead/batch_qc"],
     },
   ],
   settingsSidebar: [
@@ -89,7 +115,7 @@ const sidebars = {
       type: "category",
       label: "Settings",
       collapsed: false,
-      items: ["settings/settings-intro"],
+      items: ["settings/saving-settings"],
     },
     {
       type: "category",
@@ -101,17 +127,7 @@ const sidebars = {
       type: "category",
       label: "Environment",
       collapsed: false,
-      items: [
-        "settings/environment/saving-settings",
-        "settings/environment/layout",
-        "settings/environment/appearance",
-      ],
-    },
-    {
-      type: "category",
-      label: "Preferences",
-      collapsed: false,
-      items: ["settings/preferences/results"],
+      items: ["settings/environment/layout", "settings/environment/appearance"],
     },
   ],
 };
