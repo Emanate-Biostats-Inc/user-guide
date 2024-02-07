@@ -82,7 +82,7 @@ ods listing;
 ```sas
 /****************************************************************************************
 Program Name    : <table>-<initials>.sas
-Purpose         : QC <table> dataset
+Purpose         : QC <table>
 Client          : <Client>
 Project         : <Project>
 Programmer      : <Programmer>

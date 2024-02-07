@@ -14,7 +14,7 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 - automatically updates a SAS dataset and excel file that provides all current information about program QC status
 - automatic snapshots of QC documentation and overall QC file for each program and day
 
-## Syntax
+## Defintion
 
 ```sas
 %macro proc_compare(

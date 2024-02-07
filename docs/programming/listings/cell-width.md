@@ -17,6 +17,12 @@ cellWidth is integrated into [**%rtfbreak**](../../macros/macros-tfl/rtfbreak.md
 
 Dataset that shows the suggested cell widths for part N.
 
+- HEADER: width of the column's largest header line
+- DATA: width of the column's largest data point
+- CELLWIDTH_SUGGESTION: cell widths to be used in the listing code
+- CELLWIDTH_USED: total cell width used across all columns in the current run
+- CELLWIDTH_AVAILABLE: total cell width available in the current run
+
 ![](/img/programming/cellwidth1.png)
 
 ### aa_cellwidth_dataN

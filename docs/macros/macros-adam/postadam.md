@@ -15,7 +15,7 @@ _Created by [**Kris Ilano**](mailto:kristoffer.ilano@emanatebiostats.com?subject
 - creates xpt files
 - other post processing
 
-## Syntax
+## Defintion
 
 ```sas
 %macro postadam(

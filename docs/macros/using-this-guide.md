@@ -13,9 +13,9 @@ Subheader shows compatible studies and the creator (with mail link).
 
 Description of the macro's purpose, summary of what it does, etc...
 
-## Syntax
+## Defintion
 
-Default way to call the macro without any optional parameters.
+The macro's definition showing all the default parameters
 
 ## Parameters
 

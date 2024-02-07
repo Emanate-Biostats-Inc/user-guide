@@ -10,7 +10,7 @@ _Created by [**Kris Ilano**](mailto:kristoffer.ilano@emanatebiostats.com?subject
 
 **presdtm** reads in SDTM template and provides set up for the rest of the SDTM macros (sdtmattrib, sdtma, sdtmt, sdtmf, supp, sdtmfinal, etc.)
 
-## Syntax
+## Defintion
 
 ```sas
 %macro presdtm(domain);

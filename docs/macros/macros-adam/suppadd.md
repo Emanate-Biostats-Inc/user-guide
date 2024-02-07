@@ -14,7 +14,7 @@ Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subjec
 
 **suppAdd** merges the transposed supplemental dataset to its parent domain.
 
-## Syntax
+## Defintion
 
 ```sas
 %macro suppAdd(domain);

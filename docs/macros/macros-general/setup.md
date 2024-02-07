@@ -21,7 +21,7 @@ _Created by [**Mark Mortier**](mailto:mark.mortier@emanatebiostats.com?subject=U
 - TTLQC: Summary title for QC program
 - QCFNPATH: Path and filename for use in QC footnote
 
-## Syntax
+## Defintion
 
 ```sas
 %macro setup(

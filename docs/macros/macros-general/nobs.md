@@ -8,7 +8,7 @@ sidebar_position: 4
 
 **nobs** prints the number of observations for the given dataset.
 
-## Syntax
+## Defintion
 
 ```sas
 %macro nobs(dataset);

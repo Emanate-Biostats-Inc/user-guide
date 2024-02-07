@@ -10,7 +10,7 @@ _Created by [**Kris Ilano**](mailto:kristoffer.ilano@emanatebiostats.com?subject
 
 **batch** runs all programs from a specified folder.
 
-## Syntax
+## Defintion
 
 ```sas
 %macro batch(

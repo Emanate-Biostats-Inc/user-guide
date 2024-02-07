@@ -10,14 +10,15 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 **checkTFL** checks your final TFL dataset for Style Guide rules and provided datasets and log reports. This is automatically called inside [**%rtfbreak**](../macros-tfl/rtfbreak.md) for production table and listing programs. Validation TFL programmers can also call this if they want on their final datasets.
 
-## Syntax
+## Defintion
 
 ```sas
 %macro checkTFL(
     dataset,
     footnotes = null,
     part = 0,
-    debug = 0);
+    debug = 0
+);
 ```
 
 ## Required Parameters

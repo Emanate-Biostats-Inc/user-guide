@@ -317,24 +317,4 @@ The order of program elements is usually crucial. In other cases, it's still ide
 
 ## Efficiency
 
-If you need to do the same process more than 1-2 times, **you should probably use an array or macro.** Duplicated code is a [common code smell](https://en.wikipedia.org/wiki/Code_smell) that should be avoided.
-
-### Keep
-
-TODO
-
-### Drop
-
-TODO
-
-### Rename
-
-TODO
-
-### If
-
-TODO
-
-### Where
-
-TODO
+If you need to do the same process more than a few times, **you should probably use an array or macro.** Duplicated code is a [common code smell](https://en.wikipedia.org/wiki/Code_smell) that should be avoided.

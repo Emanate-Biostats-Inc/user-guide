@@ -16,7 +16,7 @@ _Created by [**Kris Ilano**](mailto:kristoffer.ilano@emanatebiostats.com?subject
 - creates xpt files
 - creates SUPP domains
 
-## Syntax
+## Defintion
 
 ```sas
 %macro postsdtm(

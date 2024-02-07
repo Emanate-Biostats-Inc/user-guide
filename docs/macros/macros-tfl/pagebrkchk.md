@@ -10,7 +10,7 @@ _Created by [**Kris Ilano**](mailto:kristoffer.ilano@emanatebiostats.com?subject
 
 **pagebrkchk** checks indended number of pages in rtfbreak vs actual number of pages in the listing and provides a log message. This works in conjuction with the rtfbreak macro.
 
-## Syntax
+## Defintion
 
 ```sas
 %macro pagebrkchk;

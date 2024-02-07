@@ -10,7 +10,7 @@ _Created by [**Kris Ilano**](mailto:kristoffer.ilano@emanatebiostats.com?subject
 
 **preadam** gets ADAM template for variable attributes, checks specs, creates global macros for ADaM process, etc.
 
-## Syntax
+## Defintion
 
 ```sas
 %macro preadam(adam);

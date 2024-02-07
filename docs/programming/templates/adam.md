@@ -10,7 +10,7 @@ title: ADaM
 ```sas
 /****************************************************************************************
 Program Name    : <domain>.sas
-Purpose         : Create <Domain> dataset
+Purpose         : Create <domain> dataset
 Client          : <Client>
 Project         : <Project>
 Programmer      : <Programmer>
@@ -56,7 +56,7 @@ Modifications   :
 ```sas
 /****************************************************************************************
 Program Name    : <domain>-<initials>.sas
-Purpose         : QC <Domain> dataset
+Purpose         : QC <domain> dataset
 Client          : <Client>
 Project         : <Project>
 Programmer      : <Programmer>

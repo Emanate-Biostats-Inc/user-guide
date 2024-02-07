@@ -6,7 +6,7 @@ _Created by [**First Last**](mailto:first.last@emanatebiostats.com?subject=User%
 
 **macro name** does this
 
-## Syntax
+## Defintion
 
 ```sas
 %macro macro (

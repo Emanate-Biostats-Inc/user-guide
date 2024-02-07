@@ -10,7 +10,7 @@ _Created by [**Kris Ilano**](mailto:kristoffer.ilano@emanatebiostats.com?subject
 
 **progcheck** checks the log of an individual program for ERRORS, WARNINGS, and UNWANTED NOTES.
 
-## Syntax
+## Defintion
 
 ```sas
 %macro progcheck;

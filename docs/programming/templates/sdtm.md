@@ -10,7 +10,7 @@ title: SDTM
 ```sas
 /****************************************************************************************
 Program Name    : <domain>.sas
-Purpose         : Create <Domain> dataset
+Purpose         : Create <domain> dataset
 Client          : <Client>
 Project         : <Project>
 Programmer      : <Programmer>
@@ -62,7 +62,7 @@ run;
 ```sas
 /****************************************************************************************
 Program Name    : <domain>-<initials>.sas
-Purpose         : QC <Domain> dataset
+Purpose         : QC <domain> dataset
 Client          : <Client>
 Project         : <Project>
 Programmer      : <Programmer>
