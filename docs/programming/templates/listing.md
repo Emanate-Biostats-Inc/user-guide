@@ -42,9 +42,9 @@ ods excel file = "&outpathx" &optionsx;
 	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5];
 		columns var1 var2 var3;
 
-		define var1 	  		/order   style=[just=l cellwidth=0.90 in] "Var 1 Label";
-		define var2 	  		/order   style=[just=l cellwidth=0.80 in] "Var 2 Label";
-		define var3 	  		/order   style=[just=c cellwidth=0.65 in] "Var 3 Label";
+		define var1 	  		/display style=[just=l cellwidth=0.90 in] "Var 1 Label";
+		define var2 	  		/display style=[just=l cellwidth=0.80 in] "Var 2 Label";
+		define var3 	  		/display style=[just=c cellwidth=0.65 in] "Var 3 Label";
 
 	run;
 
@@ -70,8 +70,8 @@ ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
         define sortvar1         /order 	 order=internal noprint;
 		define var1 	  		/order   style=[just=l cellwidth=0.90 in] "Var 1 Label";
         define sortvar2         /order 	 order=internal noprint;
-		define var2 	  		/order   style=[just=l cellwidth=0.80 in] "Var 2 Label";
-		define var3 	  		/order   style=[just=c cellwidth=0.65 in] "Var 3 Label";
+		define var2 	  		/display style=[just=l cellwidth=0.80 in] "Var 2 Label";
+		define var3 	  		/display style=[just=c cellwidth=0.65 in] "Var 3 Label";
 
 		compute before subjid;
 		line put ' ';

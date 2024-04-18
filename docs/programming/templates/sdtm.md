@@ -33,14 +33,7 @@ Modifications   :
 
 */
 
-%sdtm_(<final_dataset>);
-
-data sdtm;
-   set sdtm_;
-   %transfer;
-   %fixed;
-   %auto;
-run;
+%sdtm(<final_dataset>);
 
 %postsdtm;
 
@@ -88,6 +81,11 @@ Modifications   :
 %proc_compare(
 	base=sdtm.<domain>,
 	compare=qc_<domain>
+);
+
+%proc_compare(
+	base=sdtm.supp<domain>,
+	compare=qc_supp<domain>
 );
 
 %progcheck;
