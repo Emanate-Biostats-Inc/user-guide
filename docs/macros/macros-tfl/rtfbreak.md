@@ -8,7 +8,7 @@ _Created by [**Mark Mortier**](mailto:mark.mortier@emanatebiostats.com?subject=U
 
 ## Description
 
-**rtfbreak** macro is to be used on PROC REPORT syntax. It displays the first record at the top of a page for order variables were values span across pages and otherwise suppress the display. It also serves as a container to run other macros such as [**cellWidth**](../../programming/listings/cell-width.md) or [**checkTFL**](../macros-general/checktfl.md).
+**rtfbreak** macro is to be used on PROC REPORT syntax. It displays the first record at the top of a page for order variables were values span across pages and otherwise suppress the display. It also serves as a container to run other macros such as [**cellWidth**](../../programming/listings/cell-width.md) or [**style_guide_checks**](../macros-general/style-guide-checks.md).
 
 ## Defintion
 

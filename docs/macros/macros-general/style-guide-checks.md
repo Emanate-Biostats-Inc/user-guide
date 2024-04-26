@@ -2,18 +2,18 @@
 sidebar_position: 3
 ---
 
-# %checkTFL
+# %style_guide_checks
 
-_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20checkTFL)_
+_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%style_guide_checks)_
 
 ## Description
 
-**checkTFL** checks your final TFL dataset for Style Guide rules and provided datasets and log reports. This is automatically called inside [**%rtfbreak**](../macros-tfl/rtfbreak.md) for production table and listing programs. Validation TFL programmers can also call this if they want on their final datasets.
+**style_guide_checks** checks your final TFL dataset for Style Guide rules and provided datasets and log reports. This is automatically called inside [**%rtfbreak**](../macros-tfl/rtfbreak.md) for production table and listing programs. Validation TFL programmers can also call this if they want on their final datasets.
 
 ## Defintion
 
 ```sas
-%macro checkTFL(
+%macro style_guide_checks(
     dataset,
     footnotes = null,
     part = 0,
@@ -37,12 +37,12 @@ Set to part number. This is only used inside the %rtfbreak call.
 
 ### _debug_
 
-Set to 1 if you want **checkTFL** to preserve all datasets created in the macro for debugging purposes.
+Set to 1 if you want **style_guide_checks** to preserve all datasets created in the macro for debugging purposes.
 
 ## Examples
 
 ```sas
-%checkTFL(qc_final);
+%style_guide_checks(qc_final);
 ```
 
 ## Outcome
