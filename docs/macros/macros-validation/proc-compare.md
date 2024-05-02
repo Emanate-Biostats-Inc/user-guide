@@ -36,7 +36,7 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ### _base_
 
-This is the same value you would use in a normal proc compare.
+This is the same value you would use in a normal proc compare. If SDTM or ADaM, set to actual SDTM or ADaM datasets.
 
 ### _compare_
 
@@ -46,7 +46,7 @@ This is the same value you would use in a normal proc compare.
 
 ### _part_ (only needed if there are multiple parts)
 
-Set to 1 for the first call/part, 2 for the next, etc. See Example 3 below.
+Set to 1 for the first call, part 2 for the next, etc. See Example 3 below.
 
 ### _var_
 
@@ -92,7 +92,6 @@ Set to 1 if you want **proc_compare** to preserve all datasets created in the ma
   compare = qc_dm
 );
 
-** if supp **;
 %proc_compare(
   base    = sdtm.suppdm,
   compare = qc_suppdm
@@ -154,7 +153,7 @@ run;
 
 SAS dataset that keeps track of all the relevant QC information across all programs
 
-![](/img/macros/qc_report.png)
+![](/img/macros/qc_tracker.png)
 
 ### ProjectFolder/Output/QC/Archive
 
@@ -172,3 +171,4 @@ Directory containing all QC docs in RTF format
   - Variable has different label
   - Variable has different informat (TFL only)
   - Variable has different format (TFL only)
+- Message column will reflect if SDTM is only mismatching on EPOCH
