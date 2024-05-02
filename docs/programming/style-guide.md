@@ -19,7 +19,8 @@ Identical program types involve repeated code. Therefore, it frequently makes se
 
 Whether you use tabs or spaces, the most important thing is to **keep your code consistent** (i.e., avoid switching between tabs or spaces for regular indentations).
 
-#### Good
+:::tip Good
+:::
 
 ```sas
 proc sort data = test;
@@ -37,7 +38,8 @@ data indent;
 run;
 ```
 
-#### Bad
+:::danger Bad
+:::
 
 ```sas
 proc sort data = test;
@@ -68,7 +70,8 @@ run;
 
 - Extra spacing is encouraged if it improves alignment of multiple lines with similar code
 
-#### Good
+:::tip Good
+:::
 
 ```sas
 data spacing;
@@ -83,7 +86,8 @@ data spacing;
 run;
 ```
 
-#### Bad
+:::danger Bad
+:::
 
 ```sas
 data spacing;
@@ -101,7 +105,8 @@ run;
 
 - Use extra spaces and consistent numerical precision to align similar lines of code (e.g., proc report statements, macro calls, etc.).
 
-#### Good
+:::tip Good
+:::
 
 ```sas
 define space       / order   order = internal noprint;
@@ -117,7 +122,8 @@ define hrate       / display style = [cellwidth = 0.80 in just = c] "Heart Rate@
 define rrate       / display style = [cellwidth = 1.00 in just = c] "Respiratory Rate@(breaths/min)";
 ```
 
-#### Bad
+:::danger Bad
+:::
 
 ```sas
 define space     / order order = internal noprint;
@@ -133,7 +139,8 @@ define hrate      / display style = [cellwidth = 0.8 in just = c] "Heart Rate@(b
 define rrate      / display style = [cellwidth = 1 in just = c] "Respiratory Rate@(breaths/min)";
 ```
 
-#### Good
+:::tip Good
+:::
 
 ```sas
 %supp(atc3txt, "ATC3TXT", "ATC Level 3 Text",             %str(strip(upcase(atc3txt))), "ASSIGNED");
@@ -142,7 +149,8 @@ define rrate      / display style = [cellwidth = 1 in just = c] "Respiratory Rat
 %supp(stdname, "STDNAME", "WHO Standard Name",            %str(strip(upcase(stdname))), "ASSIGNED");
 ```
 
-#### Bad
+:::danger Bad
+:::
 
 ```sas
 %supp(atc3txt, "ATC3TXT", "ATC Level 3 Text", %str(strip(upcase(atc3txt))), "ASSIGNED");
@@ -156,7 +164,8 @@ define rrate      / display style = [cellwidth = 1 in just = c] "Respiratory Rat
 - Always break to a new line after the end of a line ( ; ).
 - Create a blank line to separate unique processes.
 
-#### Good
+:::tip Good
+:::
 
 ```sas
 proc sort data = test;
@@ -175,7 +184,8 @@ data linebreaks;
 run;
 ```
 
-#### Bad
+:::danger Bad
+:::
 
 ```sas
 proc sort data = test; by subjid; run;
@@ -202,11 +212,13 @@ run;
 
 With a listing column titled "Any Abnormal Findings?", here are example variable names.
 
-#### Good
+:::tip Good
+:::
 
 anyfind, findings, or abnfind
 
-#### Bad
+:::danger Bad
+:::
 
 xpeperf, var4, \_peorres, or aaa
 
