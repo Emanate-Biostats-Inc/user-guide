@@ -89,6 +89,7 @@ const sidebars = {
       label: "TFL",
       collapsed: false,
       items: [
+        "macros/macros-tfl/footnotes",
         "macros/macros-tfl/pagebrkchk",
         "macros/macros-tfl/rtfbreak",
         "macros/macros-tfl/primarydata",
