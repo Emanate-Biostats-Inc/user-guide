@@ -22,18 +22,26 @@ None
 
 ## Optional Parameters
 
-### _part_
+### _part_ (default is 1)
 
 Set to part number
 
-### _population_
+### _population_ (default is 1)
 
 Set to population number
+
+### _excel_ (default is false)
+
+Turn on by setting to either 1, Y, Yes, YES, On, ON
+
+### _rtfbreak_ (default is true)
+
+Turn off by setting to either 0, N, No, NO, Off, OFF
 
 ## Examples
 
 ### Programming Log - Footnotes Tab
-**Codes** are shorthand codes you can use in the Abbreviations, Notes, and Supers columns that translate to their associated value (and abbreviation). This helps manage updates by having one source instead of having to apply updates across many outputs.
+**Codes** are shorthand codes you can reuse in the **Abbreviations**, **Notes**, and **Supers** columns that translate to their associated value (and abbreviation). This helps manage updates by having one footnote source instead of across many programs.
 ![](/img/macros/footnotes2.png)
 
 ### Programming Log - Tables and Listings Columns
@@ -44,7 +52,7 @@ Set to population number
 #### Multiple Parts or Populations
 - If you want to create different footnotes across multiple parts or populations, prefix these with a rhombus `<>`
 - If you do this, you must always include as many `<>` as parts or populations in your output
-- Any **Abbreviations** footnotes before the first `<>` are included across all parts.
+- Any footnotes before the first `<>` are included across all parts.
 ![](/img/macros/footnotes1.png)
 
 ### SAS Program
@@ -57,15 +65,28 @@ Set to population number
 %footnotes;
 ```
 
-2. Listing with multiple parts
-Use part parameter to set which population that proc report corresponds to.
+2. Excel Listing
+```sas
+%footnotes(excel=Y);
+```
+
+3. Table/Listing without %rtfbreak
+
+```sas
+%footnotes(rtfbreak=N);
+```
+
+4. Listing with multiple parts
+
+Use _part_ parameter to set which part that proc report corresponds to.
 
 ```sas
 %footnotes(part=3);
 ```
 
-3. Table with multiple populations
-Use population parameter to set which population that proc report corresponds to.
+5. Table with multiple populations
+
+Use _population_ parameter to set which population that proc report corresponds to.
 
 ```sas
 %footnotes(population=2);

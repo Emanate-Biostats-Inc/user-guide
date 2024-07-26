@@ -42,8 +42,7 @@ ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
 	title4 "&ttldesc";
  	title5 "&ttlpop";
 
-	footnote1 "Abbreviations: <abbreviations>";
-	footnote3 &fnpath;
+	%footnotes;
 
 	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5] rtfbreak;;
 		columns sortvar1 var1 sortvar2 var2 var3;

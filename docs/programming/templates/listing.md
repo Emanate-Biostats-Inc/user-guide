@@ -36,8 +36,7 @@ Modifications   :
 ods listing close;
 ods excel file = "&outpathx" &optionsx;
 
-	footnote1 "Abbreviations: <abbreviations>";
-	footnote3 "~{super [1]} Time (days) relative to date of first dose of study drug";
+	%footnotes(excel=1);
 
 	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5];
 		columns var1 var2 var3;
@@ -60,9 +59,7 @@ ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
 	title4 "&ttldesc";
  	title5 "&ttlpop";
 
-	footnote1 "Abbreviations: <abbreviations>";
-	footnote3 "~{super [1]} Time (days) relative to date of first dose of study drug";
-	footnote5 &fnpath;
+	%footnotes;
 
 	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5] rtfbreak;;
 		columns sortvar1 var1 sortvar2 var2 var3;
