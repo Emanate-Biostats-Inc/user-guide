@@ -90,6 +90,7 @@ ods listing;
 <!-- prettier-ignore -->
 - [**%init**](..\set-up\init.md)
 - [**%setup**](..\..\macros\macros-general\setup.md)
+- [**%footnotes**](..\..\macros\macros-tfl\footnotes.md)
 - [**%rtfbreak**](..\..\macros\macros-tfl\rtfbreak.md)
 - [**%pagebrkchk**](..\..\macros\macros-tfl\pagebrkchk.md)
 - [**%progcheck**](..\..\macros\macros-general\progcheck.md)
