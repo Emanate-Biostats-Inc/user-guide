@@ -11,7 +11,7 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 **proc_compare** serves a few different purposes.
 
 - manages the handling of all program QC documentation
-- automatically updates a SAS dataset and excel file that provides all current information about program QC status
+- outputs a SAS dataset with comparison results and QC program status to be compiled by [**%qc_tracker**](.\qc-tracker.md)
 - automatic snapshots of QC documentation and overall QC file for each program and day
 
 ## Defintion
@@ -149,19 +149,17 @@ run;
 
 ## Outcome
 
-### ProjectFolder/Output/QC/Tracker/qc_tacker
+### ProjectFolder/Output/QC/Comparisons
 
-SAS dataset that keeps track of all the relevant QC information across all programs
+Directory containing comparison result in sas datasets for each qc programs
 
-![](/img/macros/qc_tracker.png)
+### ProjectFolder/Output/QC/Reports
+
+Directory containing all QC docs in RTF format
 
 ### ProjectFolder/Output/QC/Archive
 
 Directory containing excel backups of qc_tracker each new date a QC program is run
-
-### ProjectFolder/Output/QC/Comparisons
-
-Directory containing all QC docs in RTF format
 
 ## Notes
 

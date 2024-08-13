@@ -102,6 +102,7 @@ const sidebars = {
       items: [
         "macros/macros-validation/comparenobs",
         "macros/macros-validation/proc-compare",
+        "macros/macros-validation/qc-tracker",
       ],
     },
     {

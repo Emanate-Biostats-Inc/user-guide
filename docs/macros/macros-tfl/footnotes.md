@@ -24,11 +24,7 @@ None
 
 ### _part_ (default is 1)
 
-Set to part number
-
-### _population_ (default is 1)
-
-Set to population number
+Set to part or population number
 
 ### _excel_ (default is false)
 
@@ -86,10 +82,10 @@ Use _part_ parameter to set which part that proc report corresponds to.
 
 5. Table with multiple populations
 
-Use _population_ parameter to set which population that proc report corresponds to.
+Use _part_ parameter to set which population that proc report corresponds to.
 
 ```sas
-%footnotes(population=2);
+%footnotes(part=2);
 ```
 
 ## Outcome
