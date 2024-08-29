@@ -25,7 +25,7 @@ Modifications   :
 
 %let userdrv = C:\Users\&sysuserid\Emanate Biostats, Inc\EB - Projects - Documents;
 %include "&userdrv\<Client>\<Project>\Programs\Set-up\init.sas";
-%setup(<table>);
+%setup(progname=<table>);
 
 /*
 
