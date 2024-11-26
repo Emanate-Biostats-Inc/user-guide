@@ -34,23 +34,6 @@ Modifications   :
 */
 
 ods listing close;
-ods excel file = "&outpathx" &optionsx;
-
-	%footnotes(excel=1);
-
-	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5];
-		columns var1 var2 var3;
-
-		define var1 	  		/display style=[just=l cellwidth=0.90 in] "Var 1 Label";
-		define var2 	  		/display style=[just=l cellwidth=0.80 in] "Var 2 Label";
-		define var3 	  		/display style=[just=c cellwidth=0.65 in] "Var 3 Label";
-
-	run;
-
-ods excel close;
-ods listing;
-
-ods listing close;
 ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
 
 %macro procrpt;
@@ -61,7 +44,7 @@ ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
 
 	%footnotes;
 
-	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5] rtfbreak;;
+	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5];
 		columns sortvar1 var1 sortvar2 var2 var3;
 
         define sortvar1         /order 	 order=internal noprint;
@@ -73,7 +56,7 @@ ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
 		compute before subjid;
 		line put ' ';
 		endcomp;
-	run;
+	run cancel;
 %mend procrpt;
 %rtfbreak;
 
@@ -81,6 +64,8 @@ ods tagsets.rtf close;
 ods listing;
 
 %pagebrkchk;
+
+%excel_listing;
 
 %progcheck;
 ```

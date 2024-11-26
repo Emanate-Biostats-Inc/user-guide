@@ -44,7 +44,7 @@ ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
 
 	%footnotes;
 
-	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5] rtfbreak;;
+	proc report data = final missing nowindows split = "@" style=[protectspecialchars=off] style(report)=[bordertopwidth=1.5];
 		columns sortvar1 var1 sortvar2 var2 var3;
 
         define sortvar1         /order 	 order=internal noprint;
@@ -56,7 +56,7 @@ ods tagsets.rtf file = "&outpath" style=rtf_tnr_9pt ;
 		compute before subjid;
 		line put ' ';
 		endcomp;
-	run;
+	run cancel;
 %mend procrpt;
 %rtfbreak;
 
