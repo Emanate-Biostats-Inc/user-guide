@@ -54,7 +54,7 @@ const sidebars = {
       type: "category",
       label: "Macros",
       collapsed: false,
-      items: ["macros/macros-intro", "macros/using-this-guide"],
+      items: ["macros/macros-intro", "macros/macros-standards", "macros/using-this-guide"],
     },
     {
       type: "category",

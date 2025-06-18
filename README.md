@@ -5,7 +5,7 @@
 3. Install VS code https://code.visualstudio.com/
 4. Install git https://git-scm.com/download/win
 5. Install node https://nodejs.org/en/download/
-6. In VS Code open `C:\Users\Jonathan Amato\Documents\Emanate Biostats User Guide`
+6. In VS Code open `C:\Amato\Emanate Biostats User Guide\user-guide`
 7. In VS Code Terminal Powershell
 
 ## Creation
@@ -18,9 +18,15 @@ cd user-guide
 git init .
 ```
 
+## Cloining
+
+```powershell
+npm install
+```
+
 ## Screenshots
 
-Use 1080p monitor for consistent resolution and sizing.
+Use laptop for consistent resolution and sizing.
 
 ## Test Changes
 
