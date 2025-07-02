@@ -25,8 +25,6 @@ Macros should add efficiency to our workflow and not complexity.
 * Add debug mode to all macros
 * Sanitize user inputs
 
-## Only use as many parameters as necessary in an intuitive way for the user. Unless it’s passed by the user or 100% needed by the macro, don’t assume something exists
-
 ## %qc macros
 
 QC macros must adhere to the following conditions:
