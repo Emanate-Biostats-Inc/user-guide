@@ -84,7 +84,7 @@ Set to 1 if you want **proc_compare** to preserve all datasets created in the ma
 
 ## Examples
 
-1. SDTM/ADaM
+### SDTM/ADaM
 
 ```sas
 %proc_compare(
@@ -98,7 +98,7 @@ Set to 1 if you want **proc_compare** to preserve all datasets created in the ma
 );
 ```
 
-2. Table/Figure/Listing
+### Table/Figure/Listing
 
 ```sas
 %proc_compare(
@@ -109,7 +109,7 @@ Set to 1 if you want **proc_compare** to preserve all datasets created in the ma
 );
 ```
 
-3. Listing with multiple parts
+### Listing with multiple parts
 
 ```sas
 %primaryData;
@@ -131,7 +131,7 @@ Set to 1 if you want **proc_compare** to preserve all datasets created in the ma
 );
 ```
 
-4. Dataset with temporary subset comparison
+### Dataset with temporary subset comparison
 
 ```sas
 data lb_subset;
