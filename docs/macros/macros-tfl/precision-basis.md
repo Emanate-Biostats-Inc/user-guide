@@ -4,7 +4,11 @@ sidebar_position: 3
 
 # %precision_basis
 
-_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%precision_basis)_
+_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20precision_basis)_
+
+#### ✅ QC Version: %qc_precision_basis
+
+_Created by [**Emily Johnson**](mailto:emily.johnson@emanatebiostats.com?subject=User%20Guide:%20qc_precision_basis)_
 
 ## Description
 

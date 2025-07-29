@@ -13,7 +13,7 @@ _Created by [**Jonathan**](mailto:jonathan.amato@emanatebiostats.com?subject=Use
 ## Defintion
 
 ```sas
-%footnotes;
+%macro footnotes(part=N);
 ```
 
 ## Required Parameters

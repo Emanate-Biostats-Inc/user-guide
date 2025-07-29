@@ -4,7 +4,11 @@ sidebar_position: 4
 
 # %proc_means
 
-_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%proc_means)_
+_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20proc_means)_
+
+#### ✅ QC Version: %qc_proc_means
+
+_Created by [**Emily Johnson**](mailto:emily.johnson@emanatebiostats.com?subject=User%20Guide:%20qc_proc_means)_
 
 ## Description
 
@@ -16,11 +20,11 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 ## Defintion
 
 ```sas
-%macro precision_basis(
+%macro proc_means(
     data = null,
     by = null,
     var = null,
-    out = null, /* output= also works */
+    out = null,
     debug = 0
 );
 ```
