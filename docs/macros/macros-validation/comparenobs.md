@@ -6,6 +6,8 @@ sidebar_position: 1
 
 _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20compareNobs)_
 
+#### ❗ This macro is deprecated since it is now integrated into [**%compare**](.\compare.md).
+
 ## Description
 
 compareNobs creates a dataset that compares mismatching observation counts between two datasets by the specified variables. It also creates _comparenobs_dataset1_ and _comparenobs_dataset2_ datasets that are subsets of the original datasets (based on mismatches). This macro should be used whenever there is a mismatch on observation counts with the production programmer. It is not meant to be left in your code, so always call this macro while inside a comment block.

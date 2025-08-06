@@ -103,6 +103,7 @@ const sidebars = {
       collapsed: false,
       items: [
         "macros/macros-validation/comparenobs",
+        "macros/macros-validation/compare",
         "macros/macros-validation/proc-compare",
         "macros/macros-validation/qc-tracker",
       ],
