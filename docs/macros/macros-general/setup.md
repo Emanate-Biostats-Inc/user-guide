@@ -40,7 +40,7 @@ Set to the name of the program.
 
 ### _debug_
 
-Set to 1 if you want **setup** to preserve all datasets created in the macro for debugging purposes.
+Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
 
 ## Examples
 

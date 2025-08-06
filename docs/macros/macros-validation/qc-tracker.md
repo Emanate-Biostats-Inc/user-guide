@@ -17,13 +17,13 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ```sas
 %macro qc_tracker(
-	name = null,
+	name     = null,
 	mismatch = null,
-	topline = null,
-	before = null,
-	on = null,
-	after = null,
-	debug = 0
+	topline  = null,
+	before   = null,
+	on       = null,
+	after    = null,
+	debug    = 0
 );
 ```
 
@@ -59,7 +59,7 @@ Add subset to outputs last run after the specified ISO Date
 
 ### _debug_
 
-Set to 1 if you want **qc_tracker** to preserve all datasets created in the macro for debugging purposes.
+Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
 
 ## Examples
 
@@ -69,7 +69,7 @@ get all my programs that are mismatching for topline that were ran on 2024-08-10
 %qc_tracker(
   name     = FLastName,
   mismatch = Y,
-  on = 2024-08-10,
+  on       = 2024-08-10,
   topline  = Y
 );
 ```

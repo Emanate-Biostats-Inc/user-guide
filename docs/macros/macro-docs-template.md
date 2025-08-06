@@ -12,7 +12,7 @@ _Created by [**First Last**](mailto:first.last@emanatebiostats.com?subject=User%
 %macro macro (
   param1 = null,
   param2 = null,
-  debug = 0
+  debug  = 0
 );
 ```
 
@@ -30,7 +30,7 @@ None
 
 ### _debug_
 
-Set to 1 if you want **macro name** to preserve all datasets created in the macro for debugging purposes.
+Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
 
 ## Examples
 

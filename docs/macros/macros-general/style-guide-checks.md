@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # %style_guide_checks
@@ -16,8 +16,8 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 %macro style_guide_checks(
     dataset,
     footnotes = null,
-    part = 0,
-    debug = 0
+    part      = 0,
+    debug     = 0
 );
 ```
 
@@ -37,7 +37,7 @@ Set to part number. This is only used inside the %rtfbreak call.
 
 ### _debug_
 
-Set to 1 if you want **style_guide_checks** to preserve all datasets created in the macro for debugging purposes.
+Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
 
 ## Examples
 

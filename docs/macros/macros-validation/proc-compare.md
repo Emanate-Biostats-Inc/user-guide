@@ -18,17 +18,17 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ```sas
 %macro proc_compare(
-  part = null,
-  base = null,
+  part           = null,
+  base           = null,
   base_overwrite = null,
-  compare = null,
-  var = null,
-  with = null,
-  criterion = null,
-  options = listall,
-  id = null,
-  explanation = "",
-  debug = 0
+  compare        = null,
+  var            = null,
+  with           = null,
+  criterion      = null,
+  options        = listall,
+  id             = null,
+  explanation    = "",
+  debug          = 0
 );
 ```
 
@@ -46,7 +46,7 @@ This is the same value you would use in a normal proc compare.
 
 ### _part_ (only needed if there are multiple parts)
 
-Set to 1 for the first call, part 2 for the next, etc. See Example 3 below.
+Set to `1` for the first call, `2` for the next, etc. See Example 3 below.
 
 ### _var_
 
@@ -80,7 +80,7 @@ If applicable, set to "here is my explanation describing why there is a mismatch
 
 ### _debug_
 
-Set to 1 if you want **proc_compare** to preserve all datasets created in the macro for debugging purposes.
+Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
 
 ## Examples
 

@@ -63,6 +63,7 @@ const sidebars = {
       items: [
         "macros/macros-general/setup",
         "macros/macros-general/batch",
+        "macros/macros-general/importproglog",
         "macros/macros-general/style-guide-checks",
         "macros/macros-general/nobs",
         "macros/macros-general/progcheck",

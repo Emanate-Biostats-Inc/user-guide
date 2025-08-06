@@ -18,9 +18,9 @@ _Created by [**Emily Johnson**](mailto:emily.johnson@emanatebiostats.com?subject
 
 ```sas
 %macro precision_basis(
-    data = null,
-    by = null,
-    var = null,
+    data  = null,
+    by    = null,
+    var   = null,
     debug = 0
 );
 ```
@@ -41,7 +41,7 @@ Set to the name of the result variable. (e.g. `LBSTRESN` for LB and `AVAL` for A
 
 ### _debug_
 
-Set to 1 or Y if you want **precision_basis** to preserve all datasets and variables created in the macro for debugging purposes.
+Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
 
 ## Examples
 

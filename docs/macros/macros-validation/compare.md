@@ -61,7 +61,7 @@ Set to the variables you want to keep in the `Compare_nobs` subset datasets
 
 ### _debug_
 
-Set to 1 or Y if you want **compare** to preserve all datasets, variables, and log text created in the macro for debugging purposes.
+Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
 
 ## Examples
 
