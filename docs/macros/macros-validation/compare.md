@@ -19,13 +19,14 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ```sas
 %macro compare(
-	base    = null,
-	compare = null,
-	by      = null,
-	keep    = null,
-	var     = null,
-	with    = null,
-	debug   = 0
+	base      = null,
+	compare   = null,
+	by        = null,
+	keep      = null,
+	var       = null,
+	with      = null,
+	criterion = null,
+	debug     = 0
 );
 ```
 
@@ -58,6 +59,10 @@ This is the same value you would use in a normal proc compare.
 ### _keep_
 
 Set to the variables you want to keep in the `Compare_nobs` subset datasets
+
+### _criterion_
+
+This is the same value you would use in a normal proc compare.
 
 ### _debug_
 
@@ -101,11 +106,13 @@ Set to `1` or `Y` if you want to preserve all datasets, variables, and log text 
 `Compare_nobs_compare` – Compare dataset subset to mismatching NOBS
 
 #### Value Differences
-`Compare_by_var_unique` – unique mismatches sorted by variable name
+`Compare_by_var_unique` – unique mismatches sorted by variable order
 
-`Compare_by_var` – all mismatches sorted by variable name
+`Compare_by_var_unique_20` – unique mismatches sorted by variable order (limit 20 values)
 
-`Compare_by_obs` – all mismatches sorted by observation then variable name
+`Compare_by_var` – all mismatches sorted by variable order
+
+`Compare_by_obs` – all mismatches sorted by observation then variable order
 
 ![](/img/macros/compare1.png)
 
