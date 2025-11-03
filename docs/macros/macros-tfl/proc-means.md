@@ -59,7 +59,7 @@ Set to `1` or `Y` if you want to preserve all datasets, variables, and log text 
 ** get precision_basis **;
 %precision_basis(
     data = adlb,
-    by   = paramcd param,
+    by   = paramcd,
     var  = aval
 );
 
@@ -86,7 +86,7 @@ Set to `1` or `Y` if you want to preserve all datasets, variables, and log text 
 ** get precision_basis **;
 %precision_basis(
     data = adlb,
-    by   = paramcd param,
+    by   = paramcd,
     var  = aval
 );
 

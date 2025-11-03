@@ -9,18 +9,17 @@ title: Listing
 
 ```sas
 /****************************************************************************************
-Program Name    : <listing>.sas
-Purpose         : Create <listing>
-Client          : <Client>
-Project         : <Project>
-Programmer      : <Programmer>
-Version/Date    : Version/yyyy-dd-mm
-
-SAS Version     : 9.4
-
-Comments        :
-
-Modifications   :
+Program Name : Filename.sas
+Client       : CLIENT NAME
+Project      : PROTOCOL # OR PROJECT
+Programmer   : PROGRAMMER NAME
+Date Created : YYYY-MM-DD
+SAS Version  : 9.4
+ 
+Comments     :
+ 
+Modifications History (Post-Initial QC):
+ - YYYY-MM-DD: Programmer Name; Modification description
 *****************************************************************************************/
 
 %let userdrv = C:\Users\&sysuserid\Emanate Biostats, Inc\EB - Projects - Documents;
@@ -86,18 +85,17 @@ ods listing;
 
 ```sas
 /****************************************************************************************
-Program Name    : <listing>-<initials>.sas
-Purpose         : QC <listing>
-Client          : <Client>
-Project         : <Project>
-Programmer      : <Programmer>
-Version/Date    : Version/yyyy-dd-mm
-
-SAS Version     : 9.4
-
-Comments        :
-
-Modifications   :
+Program Name : Filename.sas
+Client       : CLIENT NAME
+Project      : PROTOCOL # OR PROJECT
+Programmer   : PROGRAMMER NAME
+Date Created : YYYY-MM-DD
+SAS Version  : 9.4
+ 
+Comments     :
+ 
+Modifications History (Post-Initial QC):
+ - YYYY-MM-DD: Programmer Name; Modification description
 *****************************************************************************************/
 
 %let userdrv = C:\Users\&sysuserid\Emanate Biostats, Inc\EB - Projects - Documents;

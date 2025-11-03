@@ -53,7 +53,7 @@ _see [**%proc_means**](.\proc-means.md) for full process_
 ** get precision_basis **;
 %precision_basis(
     data = adlb,
-    by   = paramcd param,
+    by   = paramcd,
     var  = aval
 );
 ```
