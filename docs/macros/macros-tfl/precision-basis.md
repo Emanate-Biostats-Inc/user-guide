@@ -31,7 +31,7 @@ Set to input dataset.
 
 ### _by_
 
-Set to unique test variables for grouping precision basis. (e.g. `LBCAT LBTESTCD LBTEST` for SDTM.LB and `PARAMCD PARAM` for ADaMs).
+Set to unique test variables for grouping precision basis. (e.g. `LBCAT LBTESTCD LBTEST` for SDTM.LB and `PARAMCD` for ADaMs).
 
 ### _var_
 
