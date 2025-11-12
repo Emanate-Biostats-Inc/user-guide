@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # %primaryData
 
-_Created by _
+_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20primaryData)_
 
 ## Description
 

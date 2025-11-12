@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # %importProgLog
 
+_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20importProgLog)_
+
 ## Description
 
 Imports the programming log tabs into one dataset with standardized column names.
