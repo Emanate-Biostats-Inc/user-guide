@@ -22,6 +22,7 @@ _Created by [**Emily Johnson**](mailto:emily.johnson@emanatebiostats.com?subject
 ```sas
 %macro proc_means(
     data  = null,
+	group = null,
     by    = null,
     var   = null,
     out   = null,
@@ -33,6 +34,10 @@ _Created by [**Emily Johnson**](mailto:emily.johnson@emanatebiostats.com?subject
 
 This is the same value you would use in a normal proc means.
 
+### _group_
+
+This must be the same value used in [**%precision_basis**](.\precision-basis.md) `group=`. This should be excluded for subject-level summary stats such as `ADSL.HEIGHTBL` in a demographics table where the precision basis is the same across all records.
+
 ### _by_
 
 This is the same value you would use in a normal proc means.
@@ -41,7 +46,7 @@ This is the same value you would use in a normal proc means.
 
 This is the same value you would use in a normal proc means.
 
-### _out_ or _output_
+### _out_
 
 This is the same value you would use in a normal proc means.
 
@@ -53,30 +58,48 @@ Set to `1` or `Y` if you want to preserve all datasets, variables, and log text 
 
 ## Examples
 
-### Table summary stats
+### Summary statistics
 
 ```sas
 ** get precision_basis **;
 %precision_basis(
-    data = adlb,
-    by   = paramcd,
-    var  = aval
+    data  = adlb,
+    group = paramcd,
+    var   = aval
 );
 
 ** AVAL summary stats **;
 %proc_means(
-	data = adlb,
-	by   = paramcd param avisitn avisit trt01an,
-	var  = aval,
-	out  = adlb_stats_aval
+	data  = adlb,
+	group = paramcd,
+	by    = paramn param avisitn avisit trt01an,
+	var   = aval,
+	out   = adlb_stats_aval
 );
 
 ** CHG summary stats **;
 %proc_means(
-	data = adlb,
-	by   = paramcd param avisitn avisit trt01an,
-	var  = chg,
-	out  = adlb_stats_chg
+	data  = adlb,
+	group = paramcd,
+	by    = paramn param avisitn avisit trt01an,
+	var   = chg,
+	out   = adlb_stats_chg
+);
+```
+
+### Subject-level summary statistics
+
+```sas
+%precision_basis(
+    data  = adsl,
+    var   = heightbl
+);
+
+%proc_means(
+	data  = adsl,
+	by    = trt01an,
+	var   = heightbl,
+	out   = adsl_stats_heightbl
 );
 ```
 
@@ -85,9 +108,9 @@ Set to `1` or `Y` if you want to preserve all datasets, variables, and log text 
 ```sas
 ** get precision_basis **;
 %precision_basis(
-    data = adlb,
-    by   = paramcd,
-    var  = aval
+    data  = adlb,
+    group = paramcd,
+    var   = aval
 );
 
 ** overwrite precision basis for specific parameters **;
@@ -100,18 +123,20 @@ Run;
 
 ** AVAL summary stats **;
 %proc_means(
-	data = adlb,
-	by   = paramcd param avisitn avisit trt01an,
-	var  = aval,
-	out  = adlb_stats_aval
+	data  = adlb,
+	group = paramcd,
+	by    = paramn param avisitn avisit trt01an,
+	var   = aval,
+	out   = adlb_stats_aval
 );
 
 ** CHG summary stats **;
 %proc_means(
-	data = adlb,
-	by   = paramcd param avisitn avisit trt01an,
-	var  = chg,
-	out  = adlb_stats_chg
+	data  = adlb,
+	group = paramcd,
+	by    = paramn param avisitn avisit trt01an,
+	var   = chg,
+	out   = adlb_stats_chg
 );
 ```
 

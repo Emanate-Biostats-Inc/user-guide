@@ -19,7 +19,7 @@ _Created by [**Emily Johnson**](mailto:emily.johnson@emanatebiostats.com?subject
 ```sas
 %macro precision_basis(
     data  = null,
-    by    = null,
+    group = null,
     var   = null,
     debug = 0
 );
@@ -29,9 +29,9 @@ _Created by [**Emily Johnson**](mailto:emily.johnson@emanatebiostats.com?subject
 
 Set to input dataset.
 
-### _by_
+### _group_
 
-Set to unique test variables for grouping precision basis. (e.g. `LBCAT LBTESTCD LBTEST` for SDTM.LB and `PARAMCD` for ADaMs).
+Set to unique test variables for grouping precision basis. (e.g. `LBCAT LBTESTCD LBTEST` for SDTM.LB and `PARAMN`, `PARAMCD`, and/or `PARAM` for BDS ADaMs). This should be excluded for subject-level summary stats such as `ADSL.HEIGHTBL` in a demographics table where the precision basis is the same across all records.
 
 ### _var_
 
@@ -47,14 +47,14 @@ Set to `1` or `Y` if you want to preserve all datasets, variables, and log text 
 
 ### Table 
 
-_see [**%proc_means**](.\proc-means.md) for full process_
+_see [**%proc_means**](.\proc-means.md) for full process and more examples_
 
 ```sas
 ** get precision_basis **;
 %precision_basis(
-    data = adlb,
-    by   = paramcd,
-    var  = aval
+    data  = adlb,
+    group = paramcd,
+    var   = aval
 );
 ```
 
@@ -62,9 +62,9 @@ _see [**%proc_means**](.\proc-means.md) for full process_
 
 ```sas
 %precision_basis(
-    data = lb,
-    by   = lbcat lbtestcd lbtest,
-    var  = lbstresn
+    data  = lb,
+    group = lbcat lbtestcd lbtest,
+    var   = lbstresn
 );
 ```
 
