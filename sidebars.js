@@ -93,6 +93,7 @@ const sidebars = {
         "macros/macros-tfl/footnotes",
         "macros/macros-tfl/pagebrkchk",
         "macros/macros-tfl/precision-basis",
+        "macros/macros-tfl/precision-format",
         "macros/macros-tfl/proc-means",
         "macros/macros-tfl/rtfbreak",
         "macros/macros-tfl/primarydata",
