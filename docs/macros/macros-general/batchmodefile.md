@@ -8,11 +8,11 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ## Description
 
-**batchModeFile** is alternative batch process to [**%batch**](.\batch.md). It creats a `.bat` file that runs multiple programs independently and outside of SAS.
+**batchModeFile** is alternative batch process to [**%batch**](.\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). This allows you to continue to use SAS while batch is running and study macro overwrites will not break batch.
 
 ### Usage
 
-Make sure your project has the following folders and files
+Make sure your project has the following folders and files from the global folder structure:
 - \Programs
   - \Batch
     - \Batch Mode
@@ -20,11 +20,9 @@ Make sure your project has the following folders and files
         - batchMode.sas
         - batchModeLogReport.sas
 
-Copy the following template container files into `\<Client>\<Project>\Programs\Batch\Batch Mode`
-  - `\Standards\Program Templates\Batch Mode\batchMode.sas`
-    - This container file runs `%batchModeFile`
-  - `\Standards\Program Templates\Batch Mode\batchModeLogReport.sas`
-    - This is automatically ran in the batch file. It just calls `%batchModeLogReport`
+batchMode.sas and batchModeLogReport.sas can be found here: `\<Client>\<Project>\Programs\Batch\Batch Mode`.  
+  - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
+  - batchModeLogReport.sas is automatically ran in the batch file. It just calls `%batchModeLogReport`
 
 Follow the steps in `batchMode.sas` (also listed here)
   1. **Optional**: Set batch mode options. You can turn off individual progchecks, qc_tracker runs, or P21.
