@@ -121,7 +121,7 @@ Clear logs and run QC ADaMs in a specific order, excluding certain domains
 %batchModeFile(
     clear = 1,
     qc = 1,
-    order = ADSL ADAE ADLB ADQS ADMI ADSCR ADEFF,
+    order = ADAE ADLB ADQS ADMI ADSCR ADEFF,
     exclude = ADVS ADEG,
     type = ADAM
 );
