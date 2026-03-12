@@ -12,6 +12,14 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ### Usage
 
+Make sure your project has the following folders and files
+- \Programs
+  - \Batch
+    - \Batch Mode
+        - \Logs
+        - batchMode.sas
+        - batchModeLogReport.sas
+
 Copy the following template container files into `\<Client>\<Project>\Programs\Batch\Batch Mode`
   - `\Standards\Program Templates\Batch Mode\batchMode.sas`
     - This container file runs `%batchModeFile`
@@ -39,7 +47,6 @@ Follow the steps in `batchMode.sas` (also listed here)
   batchfile = null,
   async     = 0,
   clear     = 0,
-  speak     = 0,
   debug     = 0
   );
 ```
@@ -87,9 +94,6 @@ Set to `1` or `Y` to run TFLs asynchronously (at the same time). This will signi
 
 ### _clear_ 
 Set to `1` or `Y` to clear existing .log and .lst files in Batch folder
-
-### _speak_ 
-Set to `1` or `Y` to announce when your batch run is finished
 
 ### _debug_ 
 Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
