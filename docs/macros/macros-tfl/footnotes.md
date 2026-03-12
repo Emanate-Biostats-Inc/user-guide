@@ -33,7 +33,7 @@ Set to part or population number
 ![](/img/macros/footnotes1.png)
 
 ### Programming Log - Tables and Listings Columns
-- Wrap all footnote codes in double curly braces (e.g. `{{STUDY DAY}}`). 
+- Wrap all footnote codes in single curly braces (e.g. `{STUDY DAY}`). 
 - Order does not matter for **Abbreviations**.
 - Order matters for **Notes** and **Supers**, as that is the order that will be inherited in the output.
 
