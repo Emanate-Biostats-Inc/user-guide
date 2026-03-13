@@ -42,7 +42,8 @@ Follow the steps in `batchMode.sas` (also listed here)
   order     = null,
   only      = null,
   exclude   = null,
-  batchfile = null,
+  out       = null,
+  filename  = null,
   async     = 0,
   clear     = 0,
   debug     = 0
@@ -76,7 +77,7 @@ Set to `1` or `Y` to overwrite default run of production programs to validation 
 Set to `1` or `Y` to only run topline flagged programs
 
 ### _order_ 
-Set to unquoted, space-delimited list of SDTM and ADaM names to overwrite default order (e.g. `order=DM EC EX ADSL ADAE ADGOUT ADMI`)
+Set to unquoted, space-delimited list of SDTM and ADaM names to overwrite default order (e.g. `order=EC EX ADAE ADLB ADMI ADEFF`)
 
 ### _only_ 
 Set to unquoted, space-delimited list of program names to be the only programs in the batch run subset (e.g. `only=DM AE ADSL ADAE t-teae l-ae`)
@@ -84,7 +85,7 @@ Set to unquoted, space-delimited list of program names to be the only programs i
 ### _exclude_ 
 Set to unquoted, space-delimited list of program names to be excluded from batch run subset (e.g. `exclude=SV`)
 
-### _batchfile_ 
+### _out_ or _filename_ 
 Set to unquoted string to overwrite default batch file name
 
 ### _async_
@@ -107,12 +108,13 @@ Clear logs and run QC for SDTM and ADaM
 );
 ```
 
-Clear logs and run topline production for TFLs
+Clear logs and run topline production for TFLs with custom name
 ```sas
 %batchModeFile(
     clear = 1,
     topline = 1,
-    type = TFL
+    type = TFL,
+    filename = run_topline_TFL
 );
 ```
 
