@@ -64,7 +64,7 @@ run;
 );
 
 data lb1;
-    merge lb (in=a) qc_precision_basis;
+    merge lb (in=a) precision_basis;
     by lbcat lbtestcd;
     if a;
 
@@ -86,7 +86,7 @@ run;
 );
 
 data lb1;
-    merge lb (in=a) qc_precision_basis;
+    merge lb (in=a) precision_basis;
     by lbcat lbtestcd;
     if a;
 
