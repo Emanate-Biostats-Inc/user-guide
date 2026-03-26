@@ -16,9 +16,11 @@ Make sure your project has the following folders and files from the global folde
 - \Programs
   - \Batch
     - \Batch Mode
-        - \Logs
         - batchMode.sas
         - batchModeLogReport.sas
+- \Output
+  - \Logs
+    - \Batch Mode
 
 batchMode.sas and batchModeLogReport.sas can be found here: `\<Client>\<Project>\Programs\Batch\Batch Mode`.  
   - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
@@ -36,7 +38,7 @@ Follow the steps in `batchMode.sas` (also listed here)
 ```sas
 %macro batchModeFile(
   type      = null,
-  dtype     = all,
+  dtype     = null,
   qc        = 0,
   topline   = 0,
   order     = null,
@@ -63,10 +65,10 @@ Set to one of the following:
 - `T`, `TABLE`, or `TABLES`
 - `F`, `FIGURE`, or `FIGURES`
 - `L`, `LISTING`, or `LISTINGS`
-- `ANC` or `ANCILLARY`
 
 ### _dtype_
 Set to one of the following:
+  - `ALL`
   - `AH`
   - `DMC`
 
