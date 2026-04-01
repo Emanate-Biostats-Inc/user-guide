@@ -47,7 +47,7 @@ Follow the steps in `batchMode.sas` (also listed here)
   out       = null,
   filename  = null,
   async     = 0,
-  clear     = 0,
+  clear     = 1,
   debug     = 0
   );
 ```
@@ -94,7 +94,7 @@ Set to unquoted string to overwrite default batch file name
 Set to `1` or `Y` to run TFLs asynchronously (at the same time). This will significantly speed up your runtime, but it may also produce unexpected results.
 
 ### _clear_ 
-Set to `1` or `Y` to clear existing .log and .lst files in Batch folder
+Set to `0` or `N` to not clear existing .log and .lst files in Batch folder
 
 ### _debug_ 
 Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
