@@ -17,21 +17,22 @@ Make sure your project has the following folders and files from the global folde
   - \Batch
     - \Batch Mode
         - batchMode.sas
-        - batchModeLogReport.sas
+        - runBatchModeClearLogs.sas
+        - runBatchModeLogReport.sas
 - \Output
   - \Logs
     - \Batch Mode
 
-batchMode.sas and batchModeLogReport.sas can be found here: `\<Client>\<Project>\Programs\Batch\Batch Mode`.  
+batchMode.sas, runBatchModeClearLogs.sas, and runBatchModeLogReport.sas can be found here: `\<Client>\<Project>\Programs\Batch\Batch Mode`.  
   - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
-  - batchModeLogReport.sas is automatically ran in the batch file. It just calls `%batchModeLogReport`
+  - runBatchModeClearLogs.sas is automatically ran in the batch file. It just runs `%batchModeClearLogs`
+  - runBatchModeLogReport.sas is automatically ran in the batch file. It just runs `%batchModeLogReport`
 
 Follow the steps in `batchMode.sas` (also listed here)
-  1. **Optional**: Set batch mode options. You can turn off individual progchecks, qc_tracker runs, or P21.
-  2. Customize `%batchModeFile` parameters for your run
-  3. Check `batch_mode_list` dataset or `\Programs\Batch\Batch Mode\batch_mode_list.xlsx` to confirm list
-  4. Double click `\Programs\Batch\Batch Mode\runBatchMode.bat` in SAS Explorer or Windows to run
-  5. If you ran async TFLs, call `%batchModeLogReport` or double click `\Programs\Batch\Batch Mode\runBatchModeLogReport.bat`
+  1. Customize `%batchModeFile` parameters for your run
+  2. Check `batch_mode_list` dataset or `runBatchMode.bat` file to confirm list
+  3. Double click `\Programs\Batch\Batch Mode\runBatchMode.bat` in SAS Explorer or Windows to run
+  4. If you ran async TFLs, call `%batchModeLogReport` or double click `\Programs\Batch\Batch Mode\runBatchModeLogReport.bat`
 
 ## Defintion
 
@@ -47,7 +48,6 @@ Follow the steps in `batchMode.sas` (also listed here)
   out       = null,
   filename  = null,
   async     = 0,
-  clear     = 1,
   debug     = 0
   );
 ```
@@ -93,37 +93,31 @@ Set to unquoted string to overwrite default batch file name
 ### _async_
 Set to `1` or `Y` to run TFLs asynchronously (at the same time). This will significantly speed up your runtime, but it may also produce unexpected results.
 
-### _clear_ 
-Set to `0` or `N` to not clear existing .log and .lst files in Batch folder
-
 ### _debug_ 
 Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
 
 ## Examples
 
-Clear logs and run QC for SDTM and ADaM
+Run QC for SDTM and ADaM
 ```sas
 %batchModeFile(
-    clear = 1,
     qc = 1,
     type = data
 );
 ```
 
-Clear logs and run topline production for TFLs with custom name
+Run topline production for TFLs with custom name
 ```sas
 %batchModeFile(
-    clear = 1,
     topline = 1,
     type = TFL,
     filename = run_topline_TFL
 );
 ```
 
-Clear logs and run QC ADaMs in a specific order, excluding certain domains
+Run QC ADaMs in a specific order, excluding certain domains
 ```sas
 %batchModeFile(
-    clear = 1,
     qc = 1,
     order = ADAE ADLB ADQS ADMI ADSCR ADEFF,
     exclude = ADVS ADEG,
