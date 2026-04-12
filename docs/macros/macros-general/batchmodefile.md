@@ -22,8 +22,12 @@ Make sure your project has the following folders and files from the global folde
 - \Output
   - \Logs
     - \Batch Mode
+- \Restricted Data
+  - \Output
+    - \Logs
+      - \Batch Mode
 
-batchMode.sas, runBatchModeClearLogs.sas, and runBatchModeLogReport.sas can be found here: `\<Client>\<Project>\Programs\Batch\Batch Mode`.  
+batchMode.sas, runBatchModeClearLogs.sas, and runBatchModeLogReport.sas can be found here: `\<Client>\<Project>\Programs\Batch\Batch Mode`. You have to update the init path in these 3 programs.
   - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
   - runBatchModeClearLogs.sas is automatically ran in the batch file. It just runs `%batchModeClearLogs`
   - runBatchModeLogReport.sas is automatically ran in the batch file. It just runs `%batchModeLogReport`
@@ -32,7 +36,7 @@ Follow the steps in `batchMode.sas` (also listed here)
   1. Customize `%batchModeFile` parameters for your run
   2. Check `batch_mode_list` dataset or `runBatchMode.bat` file to confirm list
   3. Double click `\Programs\Batch\Batch Mode\runBatchMode.bat` in SAS Explorer or Windows to run
-  4. If you ran async TFLs, call `%batchModeLogReport` or double click `\Programs\Batch\Batch Mode\runBatchModeLogReport.bat`
+  4. If you ran async TFLs, after they finish call `%batchModeLogReport` or double click `\Programs\Batch\Batch Mode\runBatchModeLogReport.bat`
 
 ## Defintion
 
