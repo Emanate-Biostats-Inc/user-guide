@@ -82,7 +82,11 @@ Set to one of the following:
 Set to one of the following:
   - `ALL`
   - `AH`
+  - `CR`
   - `DMC`
+  - `DSUR_IB`
+  - `IA`
+  - `PH`
 
 ### _qc_
 Set to `1` or `Y` to overwrite default run of production programs to validation programs
