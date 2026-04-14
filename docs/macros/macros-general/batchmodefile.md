@@ -8,11 +8,16 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ## Description
 
-**batchModeFile** is alternative batch process to [**%batch**](.\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). This allows you to continue to use SAS while batch is running and study macro overwrites will not break batch.
+**batchModeFile** is an alternative batch process to [**%batch**](.\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). These are the main benefits of batch mode:
+* You can still use SAS while batch is running. 
+* Programs are run independently.
+  * If someone overwrites a study macro or global variable, it will not break subsequent programs.
+  * Batch will not stop due to running out of resources when processing large amounts of code or data. This occasionally happens with our current batch process.
+* You should see 30-40% faster runtimes 
 
-### Usage
+### Setup
 
-Make sure your project has the following folders and files from the global folder structure. The 3 `.sas` files will need their init paths updated to your project, and those template files can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode`.
+Ensure your project has the following folders and files from the global folder structure. The three `.sas` files will need their init paths updated to your project, and those template files can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode`.
 - \Programs
   - \Batch
     - \Batch Mode
@@ -36,15 +41,17 @@ init.sas needs the following code at the bottom from the most recent global vers
 %end;
 ```
 
-  - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
-  - runBatchModeClearLogs.sas is automatically ran in the batch file. It just runs `%batchModeClearLogs`
-  - runBatchModeLogReport.sas is automatically ran in the batch file. It just runs `%batchModeLogReport`
+### Usage
 
-Follow the steps in `batchMode.sas` (also listed here)
+  - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
+  - runBatchModeClearLogs.sas is automatically ran at the beginning of the batch file to call `%batchModeClearLogs`.
+  - runBatchModeLogReport.sas is automatically ran at the end of the batch file to call `%batchModeLogReport`.
+
+Follow the commented steps in `batchMode.sas` (also listed here)
   1. Customize `%batchModeFile` parameters for your run
-  2. Check `batch_mode_list` dataset or `runBatchMode.bat` file to confirm list
+  2. Check `batch_mode_list` dataset or the `.bat` file to confirm list
   3. Double click `\Programs\Batch\Batch Mode\runBatchMode.bat` in SAS Explorer or Windows to run
-  4. If you ran async TFLs, after they finish call `%batchModeLogReport` or double click `\Programs\Batch\Batch Mode\runBatchModeLogReport.bat`
+  4. (conditional) If you ran async TFLs, after they all finish call `%batchModeLogReport` or double click `\Programs\Batch\Batch Mode\runBatchModeLogReport.bat`
 
 ## Defintion
 
@@ -59,6 +66,7 @@ Follow the steps in `batchMode.sas` (also listed here)
   exclude   = null,
   out       = null,
   filename  = null,
+  notify    = 1,
   async     = 0,
   debug     = 0
   );
@@ -106,6 +114,9 @@ Set to unquoted, space-delimited list of program names to be excluded from batch
 ### _out_ or _filename_ 
 Set to unquoted string to overwrite default batch file name
 
+### _notify_  
+Set to `0` or `N` to not send a Teams notification when batch is finished
+
 ### _async_
 ⚠️ Use at your own risk. This will significantly speed up your runtime, but it may also produce unexpected results. This uses most of your computer's resources, so you likely won't be able to do anything else until all the outputs are generated. Set to `1` or `Y` to run TFLs asynchronously (at the same time). 
 
@@ -114,7 +125,7 @@ Set to `1` or `Y` if you want to preserve all datasets, variables, and log text 
 
 ## Examples
 
-Run QC for SDTM and ADaM
+Create `runBatchMode.bat` file to run QC for SDTM and ADaM
 ```sas
 %batchModeFile(
     qc = 1,
@@ -122,16 +133,16 @@ Run QC for SDTM and ADaM
 );
 ```
 
-Run topline production for TFLs with custom name
+Create `run_topline_TFL.bat` file to run topline production for TFLs
 ```sas
 %batchModeFile(
     topline = 1,
     type = TFL,
-    filename = run_topline_TFL
+    out = run_topline_TFL
 );
 ```
 
-Run QC ADaMs in a specific order, excluding certain domains
+Create `runBatchMode.bat` file to run QC ADaMs in a specific order, excluding certain domains
 ```sas
 %batchModeFile(
     qc = 1,
@@ -142,5 +153,8 @@ Run QC ADaMs in a specific order, excluding certain domains
 ```
 
 ## Outcome
+
+### Log report
+Log report will be generated at `\Output\Logs\Batch Mode\Project_yyyy-mm-ddThh-mm_LOG_REPORT.xlsx`
 
 ## Notes
