@@ -152,9 +152,21 @@ Create `runBatchMode.bat` file to run QC ADaMs in a specific order, excluding ce
 );
 ```
 
+Create `runBatchMode.bat` file to run QC for specific TFL programs. The easiest method is to highlight multiple **Program** cells in the programming log, copy, and paste into the macro.
+```sas
+%batchModeFile(
+    qc = 1,
+    only = T-HEMA T-HEMA-SHIFT T-CHEM T-CHEM-SHIFT T-COAG T-COAG-SHIFT L-HEMA l-AB-HEMA,
+    type = TFL
+);
+```
+
 ## Outcome
 
-### Log report
+### Logs
+Individual program logs will be generated at `\Output\Logs\Batch Mode`
+
+### Log Report
 Log report will be generated at `\Output\Logs\Batch Mode\Project_yyyy-mm-ddThh-mm_LOG_REPORT.xlsx`
 
 ## Notes
