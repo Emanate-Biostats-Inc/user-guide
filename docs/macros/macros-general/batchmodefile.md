@@ -12,7 +12,7 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ### Usage
 
-Make sure your project has the following folders and files from the global folder structure:
+Make sure your project has the following folders and files from the global folder structure. The 3 `.sas` files will need their init paths updated to your project, and those template files can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode`.
 - \Programs
   - \Batch
     - \Batch Mode
@@ -27,7 +27,15 @@ Make sure your project has the following folders and files from the global folde
     - \Logs
       - \Batch Mode
 
-batchMode.sas, runBatchModeClearLogs.sas, and runBatchModeLogReport.sas can be found here: `\<Client>\<Project>\Programs\Batch\Batch Mode`. You have to update the init path in these 3 programs.
+init.sas needs the following code at the bottom from the most recent global version:
+```sas
+%if %upcase("&sysparm") = "BATCHMODE" %then %do;
+    %let progcheck = 0;
+    %let p21 = 0;
+    %let qc_tracker = 0;
+%end;
+```
+
   - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
   - runBatchModeClearLogs.sas is automatically ran in the batch file. It just runs `%batchModeClearLogs`
   - runBatchModeLogReport.sas is automatically ran in the batch file. It just runs `%batchModeLogReport`
