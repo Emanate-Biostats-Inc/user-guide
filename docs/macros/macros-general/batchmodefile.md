@@ -103,7 +103,7 @@ Set to unquoted, space-delimited list of program names to be excluded from batch
 Set to unquoted string to overwrite default batch file name
 
 ### _async_
-Set to `1` or `Y` to run TFLs asynchronously (at the same time). This will significantly speed up your runtime, but it may also produce unexpected results.
+⚠️ Use at your own risk. This will significantly speed up your runtime, but it may also produce unexpected results. This uses most of your computer's resources, so you likely won't be able to do anything else until all the outputs are generated. Set to `1` or `Y` to run TFLs asynchronously (at the same time). 
 
 ### _debug_ 
 Set to `1` or `Y` if you want to preserve all datasets, variables, and log text created by the macro for debugging purposes.
