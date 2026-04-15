@@ -8,12 +8,14 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ## Description
 
-**batchModeFile** is an alternative batch process to [**%batch**](.\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). These are the main benefits of batch mode:
-* You can still use SAS while batch is running. 
-* Programs are run independently.
+**batchModeFile** is an alternative batch process to [**%batch**](.\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). These are the main benefits of using this batch process:
+* Ability to use SAS while batch is running
+* Programs run independently
   * If someone overwrites a study macro or global variable, it will not break subsequent programs.
-  * Batch will not stop due to running out of resources when processing large amounts of code or data. This occasionally happens with our current batch process.
-* You should see 30-40% faster runtimes 
+  * Batch will not stop due to running out of resources when processing large amounts of code or data. 
+* Improved parameters for customizing runs
+* Teams notification when batch is finished
+* 30-40% faster runtimes
 
 ### Setup
 
@@ -44,8 +46,8 @@ init.sas needs the following code at the bottom from the most recent global vers
 ### Usage
 
   - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
-  - runBatchModeClearLogs.sas is automatically ran at the beginning of the batch file to call `%batchModeClearLogs`.
-  - runBatchModeLogReport.sas is automatically ran at the end of the batch file to call `%batchModeLogReport`.
+  - runBatchModeClearLogs.sas automatically runs at the beginning of the batch file to call `%batchModeClearLogs`.
+  - runBatchModeLogReport.sas automatically runs at the end of the batch file to call `%batchModeLogReport`.
 
 Follow the commented steps in `batchMode.sas` (also listed here)
   1. Customize `%batchModeFile` parameters for your run
