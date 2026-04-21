@@ -165,10 +165,17 @@ Create `runBatchMode.bat` file to run QC for specific TFL programs. The easiest 
 
 ## Outcome
 
+### `.bat` file operations
+1. Initializes paths
+2. Runs `runBatchModeClearLogs.sas` to clear any log files in `\Output\Logs\Batch Mode`
+3. Runs SAS programs
+4. Runs `runBatchModeLogReport.sas` to generate log report in `\Output\Logs\Batch Mode`
+5. Runs `send_teams_message.ps1` to send Teams Notification that batch is finished
+
 ### Logs
-Individual program logs will be generated at `\Output\Logs\Batch Mode`
+Individual program logs are generated at `\Output\Logs\Batch Mode`
 
 ### Log Report
-Log report will be generated at `\Output\Logs\Batch Mode\Project_yyyy-mm-ddThh-mm_LOG_REPORT.xlsx`
+Log report is generated at `\Output\Logs\Batch Mode\Project_yyyy-mm-ddThh-mm_LOG_REPORT.xlsx`
 
 ## Notes
