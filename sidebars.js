@@ -68,6 +68,7 @@ const sidebars = {
         "macros/macros-general/style-guide-checks",
         "macros/macros-general/nobs",
         "macros/macros-general/progcheck",
+        "macros/macros-general/await",
       ],
     },
     {
