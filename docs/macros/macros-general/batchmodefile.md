@@ -53,7 +53,7 @@ Follow the commented steps in `batchMode.sas` (also listed here)
   1. Customize `%batchModeFile` parameters for your run
   2. Check `batch_mode_list` dataset or the `.bat` file to confirm list
   3. Double click `\Programs\Batch\Batch Mode\runBatchMode.bat` in SAS Explorer or Windows to run
-  4. (conditional) If you ran async TFLs, after they all finish call `%batchModeLogReport` or double click `\Programs\Batch\Batch Mode\runBatchModeLogReport.bat`
+  4. (conditional) If you ran async TFLs, after they all finish call `%batchModeLogReport`
 
 ## Defintion
 
