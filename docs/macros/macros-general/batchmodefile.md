@@ -99,7 +99,7 @@ Set to one of the following:
   - `PH`
 
 ### _qc_
-Set to `1` or `Y` to overwrite default run of production programs to validation programs
+Set to `1` or `Y` to run QC programs
 
 ### _topline_  
 Set to `1` or `Y` to only run topline flagged programs
