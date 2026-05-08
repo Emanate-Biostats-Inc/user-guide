@@ -19,7 +19,8 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ### Setup
 
-Ensure your project has the following folders and files from the global folder structure. The three `.sas` files will need their init paths updated to your project, and those template files can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode`.
+1. Ensure your project has the following folders and files from the global folder structure.
+2. Update the init paths to your project in  `batchMode.sas`, `runBatchModeClearLogs.sas`, and `runBatchModeLogReport.sas`. Those template files can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode`.
 - \Programs
   - \Batch
     - \Batch Mode
@@ -34,7 +35,7 @@ Ensure your project has the following folders and files from the global folder s
     - \Logs
       - \Batch Mode
 
-init.sas needs the following code at the bottom from the most recent global version:
+3. init.sas needs the following code at the bottom from the most recent global version:
 ```sas
 %if %upcase("&sysparm") = "BATCHMODE" %then %do;
     %let progcheck = 0;
