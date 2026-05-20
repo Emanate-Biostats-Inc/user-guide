@@ -2,13 +2,13 @@
 sidebar_position: 3
 ---
 
-# %batchModeFile
+# %batchMode
 
-_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20batchModeFile)_
+_Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subject=User%20Guide:%20batchMode)_
 
 ## Description
 
-**batchModeFile** is an alternative batch process to [**%batch**](.\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). These are the main benefits of using this batch process:
+**batchMode** is an alternative batch process to [**%batch**](.\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). These are the main benefits of using this batch process:
 * Ability to use SAS while batch is running
 * Programs run independently
   * If someone overwrites a study macro or global variable, it will not break subsequent programs.
@@ -36,6 +36,8 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
       - \Batch Mode
 
 3. init.sas needs the following code at the bottom from the most recent global version:
+
+  _Optional_: Add `%let batch_toggle = 0;` if you want QC dataset programs to not run production datasets via batch mode.
 ```sas
 %if %upcase("&sysparm") = "BATCHMODE" %then %do;
     %let progcheck = 0;
@@ -46,20 +48,19 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ### Usage
 
-  - batchMode.sas runs `%batchModeFile`. Think of this like our batch.sas file that runs the `%batch` calls.
+  - batchMode.sas runs `%batchMode`. Think of this like our batch.sas file that runs the `%batch` calls.
   - runBatchModeClearLogs.sas automatically runs at the beginning of the batch file to call `%batchModeClearLogs`.
   - runBatchModeLogReport.sas automatically runs at the end of the batch file to call `%batchModeLogReport`.
 
 Follow the commented steps in `batchMode.sas` (also listed here)
-  1. Customize `%batchModeFile` parameters for your run
+  1. Customize `%batchMode` parameters for your run
   2. Check `batch_mode_list` dataset or the `.bat` file to confirm list
-  3. Double click `\Programs\Batch\Batch Mode\runBatchMode.bat` in SAS Explorer or Windows to run
-  4. (conditional) If you ran async TFLs, after they all finish call `%batchModeLogReport`
+  3. (conditional) If you ran async TFLs, after they all finish call `%batchModeLogReport`
 
 ## Defintion
 
 ```sas
-%macro batchModeFile(
+%macro batchMode(
   type      = null,
   dtype     = null,
   qc        = 0,
@@ -67,6 +68,7 @@ Follow the commented steps in `batchMode.sas` (also listed here)
   order     = null,
   only      = null,
   exclude   = null,
+  run       = 1,
   out       = null,
   filename  = null,
   notify    = 1,
@@ -114,6 +116,9 @@ Set to unquoted, space-delimited list of program names to be the only programs i
 ### _exclude_ 
 Set to unquoted, space-delimited list of program names to be excluded from batch run subset (e.g. `exclude=SV`)
 
+### _run_  
+Set to `0` or `N` to not automatically run .bat file
+
 ### _out_ or _filename_ 
 Set to unquoted string to overwrite default batch file name
 
@@ -128,40 +133,24 @@ Set to `1` or `Y` if you want to preserve all datasets, variables, and log text 
 
 ## Examples
 
-Create `runBatchMode.bat` file to run QC for SDTM and ADaM
+Run QC for SDTM and ADaM
 ```sas
-%batchModeFile(
-    qc = 1,
-    type = data
-);
+%batchMode(type = datasets, qc = 1);
 ```
 
-Create `run_topline_TFL.bat` file to run topline production for TFLs
+Run topline production for TFLs
 ```sas
-%batchModeFile(
-    topline = 1,
-    type = TFL,
-    out = run_topline_TFL
-);
+%batchMode(type = TFL, topline = 1);
 ```
 
-Create `runBatchMode.bat` file to run QC ADaMs in a specific order, excluding certain domains
+Run QC ADaMs in a specific order, excluding certain domains
 ```sas
-%batchModeFile(
-    qc = 1,
-    order = ADAE ADLB ADQS ADMI ADSCR ADEFF,
-    exclude = ADVS ADEG,
-    type = ADAM
-);
+%batchMode(type = ADAM, qc = 1, order = ADAE ADLB ADQS ADMI ADSCR ADEFF, exclude = ADVS ADEG);
 ```
 
-Create `runBatchMode.bat` file to run QC for specific TFL programs. The easiest method is to highlight multiple **Program** cells in the programming log, copy, and paste into the macro.
+Run QC for specific TFL programs. The easiest method is to highlight multiple **Program** cells in the programming log, copy, and paste into the macro.
 ```sas
-%batchModeFile(
-    qc = 1,
-    only = T-HEMA T-HEMA-SHIFT T-CHEM T-CHEM-SHIFT T-COAG T-COAG-SHIFT L-HEMA l-AB-HEMA,
-    type = TFL
-);
+%batchMode(type = TFL, qc = 1, only = T-HEMA T-HEMA-SHIFT T-CHEM T-CHEM-SHIFT T-COAG T-COAG-SHIFT L-HEMA l-AB-HEMA);
 ```
 
 ## Outcome
@@ -177,6 +166,6 @@ Create `runBatchMode.bat` file to run QC for specific TFL programs. The easiest 
 Individual program logs are generated at `\Output\Logs\Batch Mode`
 
 ### Log Report
-Log report is generated at `\Output\Logs\Batch Mode\Project_yyyy-mm-ddThh-mm_LOG_REPORT.xlsx`
+Log report is generated at `\Output\Logs\Batch Mode\Project_yyyy-mm-ddThh-mm_<BATCH ID>_LOG_REPORT.xlsx`
 
 ## Notes
