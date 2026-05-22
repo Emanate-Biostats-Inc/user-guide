@@ -64,6 +64,7 @@ Follow the commented steps in `batchMode.sas` (also listed here)
   type      = null,
   dtype     = null,
   qc        = 0,
+  qc_only   = 0,
   topline   = 0,
   order     = null,
   only      = null,
@@ -102,7 +103,10 @@ Set to one of the following:
   - `PH`
 
 ### _qc_
-Set to `1` or `Y` to run QC programs
+Set to `1` or `Y` to run QC programs. For SDTM and ADAM this setting runs both production and QC programs. If QC program does not exist, production program is run.
+
+### _qc\_only_
+Set to `1` or `Y` to only run QC dataset programs and not also production dataset programs
 
 ### _topline_  
 Set to `1` or `Y` to only run topline flagged programs
