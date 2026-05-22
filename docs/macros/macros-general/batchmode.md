@@ -173,3 +173,4 @@ Individual program logs are generated at `\Output\Logs\Batch Mode`
 Log report is generated at `\Output\Logs\Batch Mode\Project_yyyy-mm-ddThh-mm_<BATCH ID>_LOG_REPORT.xlsx`
 
 ## Notes
+Batch Mode turns off %batch inside SDTM and ADaM QC programs so it can run Production and QC separately. This avoids the issues when a QC program doesn't exist yet or has %batch commented out.
