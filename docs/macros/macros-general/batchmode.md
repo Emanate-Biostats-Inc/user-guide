@@ -36,13 +36,12 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
       - \Batch Mode
 
 3. init.sas needs the following code at the bottom from the most recent global version:
-
-  _Optional_: Add `%let batch_toggle = 0;` if you want QC dataset programs to not run production datasets via batch mode.
 ```sas
 %if %upcase("&sysparm") = "BATCHMODE" %then %do;
     %let progcheck = 0;
     %let p21 = 0;
     %let qc_tracker = 0;
+    %let batch_toggle = 0;
 %end;
 ```
 
@@ -159,12 +158,12 @@ Run QC for specific TFL programs. The easiest method is to highlight multiple **
 
 ## Outcome
 
-### `.bat` file operations
-1. Initializes paths
-2. Runs `runBatchModeClearLogs.sas` to clear any log files in `\Output\Logs\Batch Mode`
-3. Runs SAS programs
-4. Runs `runBatchModeLogReport.sas` to generate log report in `\Output\Logs\Batch Mode`
-5. Runs `send_teams_message.ps1` to send Teams Notification that batch is finished
+### `.bat` file batch mode operations
+1. Initialize paths
+2. Run `runBatchModeClearLogs.sas` to clear any log files in `\Output\Logs\Batch Mode`
+3. Run SAS programs
+4. Run `runBatchModeLogReport.sas` to generate log report in `\Output\Logs\Batch Mode`
+5. Run `send_teams_message.ps1` to send Teams Notification that batch is finished
 
 ### Logs
 Individual program logs are generated at `\Output\Logs\Batch Mode`
