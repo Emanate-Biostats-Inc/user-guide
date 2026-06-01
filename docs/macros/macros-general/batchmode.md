@@ -20,13 +20,11 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 ### Setup
 
 1. Ensure your project has the following folders and files from the global folder structure.
-2. Update the init paths to your project in  `batchMode.sas`, `runBatchModeClearLogs.sas`, and `runBatchModeLogReport.sas`. Those template files can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode`.
+2. Copy and update the init paths to your project in `batchMode.sas`. The template file can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode\batchMode.sas`.
 - \Programs
   - \Batch
     - \Batch Mode
         - batchMode.sas
-        - runBatchModeClearLogs.sas
-        - runBatchModeLogReport.sas
 - \Output
   - \Logs
     - \Batch Mode
