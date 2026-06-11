@@ -19,9 +19,10 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ### Setup
 
-1. Ensure your project has the following folders and files from the global folder structure.
-2. Copy and update the init paths to your project in `batchMode.sas`. The template file can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode\batchMode.sas`.
+1. Ensure your project has the following folders and current file versions from the global folder structure.
 - \Programs
+  - \Macros
+    - batch.sas
   - \Batch
     - \Batch Mode
         - batchMode.sas
@@ -32,7 +33,7 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
   - \Output
     - \Logs
       - \Batch Mode
-
+2. Copy and update the init paths to your project in `batchMode.sas`. The template file can be found here `\EB - Public - Documents\Standards\Program Templates\Batch Mode\batchMode.sas`.
 3. init.sas needs the following code at the bottom from the most recent global version:
 ```sas
 %if %upcase("&sysparm") = "BATCHMODE" %then %do;
