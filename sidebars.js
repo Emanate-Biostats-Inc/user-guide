@@ -63,7 +63,6 @@ const sidebars = {
       items: [
         "macros/macros-general/setup",
         "macros/macros-general/batch",
-        "macros/macros-general/batchmode",
         "macros/macros-general/importproglog",
         "macros/macros-general/style-guide-checks",
         "macros/macros-general/nobs",
@@ -116,7 +115,7 @@ const sidebars = {
       type: "category",
       label: "Lead",
       collapsed: false,
-      items: ["macros/macros-lead/batch_qc"],
+      items: ["macros/macros-lead/batchmode"],
     },
   ],
   settingsSidebar: [

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # %batchMode
@@ -8,7 +8,7 @@ _Created by [**Jonathan Amato**](mailto:jonathan.amato@emanatebiostats.com?subje
 
 ## Description
 
-**batchMode** is an alternative batch process to [**%batch**](.\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). These are the main benefits of using this batch process:
+**batchMode** is an alternative batch process to [**%batch**](..\macros-general\batch.md). It creats a Windows `.bat` file that runs multiple programs independently using [**SAS Batch Mode**](https://documentation.sas.com/doc/en/vdmmlcdc/8.1/pgmcli/n1nor2ldajipsvn1x42cmpr8ugq3.htm). These are the main benefits of using this batch process:
 * Ability to use SAS while batch is running
 * Programs run independently
   * If someone overwrites a study macro or global variable, it will not break subsequent programs.
